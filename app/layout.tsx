@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Oswald, Roboto } from "next/font/google";
+import { Montserrat, Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({ variable: "--font-roboto", subsets: ["latin"], weight: ["300", "700"] });
+const roboto = Roboto({ variable: "--font-roboto", subsets: ["latin"], weight: ["300", "400", "700"] });
 const oswald = Oswald({ variable: "--font-oswald", subsets: ["latin"], weight: ["500", "700"] });
+const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], weight: ["500", "600"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ideamosestudio.github.io/maguimel/"),
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={`${roboto.variable} ${oswald.variable}`}>{children}</body>
+      <body className={`${roboto.variable} ${oswald.variable} ${montserrat.variable}`}>{children}</body>
     </html>
   );
 }

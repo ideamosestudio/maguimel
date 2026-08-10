@@ -85,7 +85,7 @@ export default function Home() {
             <p className="eyebrow light">Uniformes escolares</p>
             <h3>Colegio</h3>
             <p>Prendas cómodas, resistentes y fieles a la identidad de cada institución: chombas, buzos, remeras, equipos deportivos y más.</p>
-            <a className="service-cta" href="#contacto">Consultar por mi colegio <Arrow /></a>
+            <a className="service-cta" href="#contacto">Consultar por mi colegio</a>
           </div>
           <div className="service-tags"><span>Calidad</span><span>Comodidad</span><span>Identidad</span></div>
         </div>
@@ -96,7 +96,7 @@ export default function Home() {
             <p className="eyebrow light">Prendas que comunican</p>
             <h3>Publicidad</h3>
             <p>Convertimos tu marca en indumentaria que se ve y se recuerda. Producciones para eventos, promociones, equipos y campañas.</p>
-            <a className="service-cta" href="#contacto">Potenciar mi marca <Arrow /></a>
+            <a className="service-cta" href="#contacto">Potenciar mi marca</a>
           </div>
           <div className="service-tags"><span>Estampado</span><span>Bordado</span><span>Producción</span></div>
         </div>
@@ -107,7 +107,7 @@ export default function Home() {
             <p className="eyebrow light">Indumentaria profesional</p>
             <h3>Trabajo</h3>
             <p>Uniformes funcionales para el día a día, creados para representar a tu empresa y acompañar a tu equipo.</p>
-            <a className="service-cta" href="#contacto">Vestir a mi equipo <Arrow /></a>
+            <a className="service-cta" href="#contacto">Vestir a mi equipo</a>
           </div>
           <div className="service-tags"><span>Resistencia</span><span>Funcionalidad</span><span>Imagen</span></div>
         </div>
@@ -118,6 +118,10 @@ export default function Home() {
         <div className="process-heading">
           <h2>De la idea a la prenda,<br />sin vueltas.</h2>
           <p>Un proceso claro, acompañado de principio a fin.</p>
+          <div className="process-actions">
+            <a className="button button--dark" href="#colegio">Ver nuestras líneas</a>
+            <a className="button button--paper" href="#contacto">Solicitar presupuesto</a>
+          </div>
         </div>
         <div className="steps">
           <article><div className="step-marker"><span>01</span></div><p className="step-kicker">Primera etapa</p><h3>Nos contás</h3><p>Conocemos tu necesidad, cantidades, talles y tiempos.</p></article>
@@ -155,7 +159,10 @@ export default function Home() {
         <Brand dark />
         <p>Uniformes escolares, laborales y publicitarios.</p>
         <a href="#home">Volver arriba ↑</a>
-        <small>© {new Date().getFullYear()} Textil Maguimel</small>
+        <small>
+          <span>© {new Date().getFullYear()} Textil Maguimel</span>
+          <a href="https://www.ideamos.com.ar" target="_blank" rel="noreferrer">Hecho por Estudio Ideamos</a>
+        </small>
       </footer>
     </main>
   );
