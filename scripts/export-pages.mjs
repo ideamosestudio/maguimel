@@ -23,7 +23,7 @@ html = html
   .replaceAll('href="/images/', 'href="./images/')
   .replaceAll('src="/images/', 'src="./images/')
   .replaceAll('href="/og.png"', 'href="./og.png"')
-  .replaceAll('content="/og.png"', 'content="https://ideamosestudio.github.io/textil-maguimel/og.png"');
+  .replaceAll('content="/og.png"', 'content="https://ideamosestudio.github.io/maguimel/og.png"');
 
 await Promise.all([
   writeFile(resolve(output, "index.html"), html),

@@ -6,7 +6,7 @@ const manrope = Manrope({ variable: "--font-body", subsets: ["latin"] });
 const space = Space_Grotesk({ variable: "--font-display", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ideamosestudio.github.io/textil-maguimel/"),
+  metadataBase: new URL("https://ideamosestudio.github.io/maguimel/"),
   title: "Textil Maguimel | Uniformes para colegios y empresas",
   description: "Uniformes escolares, indumentaria de trabajo y prendas publicitarias a medida en Ramos Mejía.",
   openGraph: {
