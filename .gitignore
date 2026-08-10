@@ -5,4 +5,4 @@ dist/
 .vinext/
 .env*
 *.log
-.gh-auth-*.txt
+.gh-auth*.txt
