@@ -20,8 +20,7 @@ if (!response.ok) throw new Error(`Static render failed: ${response.status}`);
 let html = await response.text();
 html = html
   .replaceAll('/_next/', './_next/')
-  .replaceAll('href="/images/', 'href="./images/')
-  .replaceAll('src="/images/', 'src="./images/')
+  .replaceAll('/images/', './images/')
   .replaceAll('href="/og.png"', 'href="./og.png"')
   .replaceAll('content="/og.png"', 'content="https://ideamosestudio.github.io/maguimel/og.png"');
 

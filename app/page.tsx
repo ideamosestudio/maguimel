@@ -6,10 +6,7 @@ const mapsHref =
 function Brand({ dark = false }: { dark?: boolean }) {
   return (
     <a className={`brand ${dark ? "brand--dark" : ""}`} href="#home" aria-label="Textil Maguimel, inicio">
-      <span className="brand-mark" aria-hidden="true">
-        <i /><i /><i /><i />
-      </span>
-      <span className="brand-name"><small>textil</small>MAGUIMEL</span>
+      <img src="/images/logo-maguimel.png" alt="Textil Maguimel" />
     </a>
   );
 }
@@ -64,6 +61,10 @@ export default function Home() {
           <div>
             <p className="eyebrow">Textil Maguimel</p>
             <h2>Vestimos identidad.<br />Construimos confianza.</h2>
+            <div className="intro-actions">
+              <a className="button button--dark" href="#colegio">Uniformes escolares</a>
+              <a className="button button--paper" href="#trabajo">Indumentaria de trabajo</a>
+            </div>
           </div>
           <div className="intro-body">
             <p className="lead">Somos fabricantes de uniformes escolares, indumentaria de trabajo y prendas publicitarias.</p>
@@ -78,24 +79,24 @@ export default function Home() {
       </section>
 
       <section className="services section-dark" aria-label="Nuestras líneas">
-        <div className="service-card" id="colegio">
+        <div className="service-card service-card--school" id="colegio">
           <div className="service-number">01</div>
           <div className="service-content">
             <p className="eyebrow light">Uniformes escolares</p>
             <h3>Colegio</h3>
             <p>Prendas cómodas, resistentes y fieles a la identidad de cada institución: chombas, buzos, remeras, equipos deportivos y más.</p>
-            <a href="#contacto">Consultar por mi colegio <Arrow /></a>
+            <a className="service-cta" href="#contacto">Consultar por mi colegio <Arrow /></a>
           </div>
           <div className="service-tags"><span>Calidad</span><span>Comodidad</span><span>Identidad</span></div>
         </div>
 
-        <div className="service-card service-card--lime" id="publicidad">
+        <div className="service-card service-card--publicity" id="publicidad">
           <div className="service-number">02</div>
           <div className="service-content">
-            <p className="eyebrow">Prendas que comunican</p>
+            <p className="eyebrow light">Prendas que comunican</p>
             <h3>Publicidad</h3>
             <p>Convertimos tu marca en indumentaria que se ve y se recuerda. Producciones para eventos, promociones, equipos y campañas.</p>
-            <a href="#contacto">Potenciar mi marca <Arrow /></a>
+            <a className="service-cta" href="#contacto">Potenciar mi marca <Arrow /></a>
           </div>
           <div className="service-tags"><span>Estampado</span><span>Bordado</span><span>Producción</span></div>
         </div>
@@ -106,7 +107,7 @@ export default function Home() {
             <p className="eyebrow light">Indumentaria profesional</p>
             <h3>Trabajo</h3>
             <p>Uniformes funcionales para el día a día, creados para representar a tu empresa y acompañar a tu equipo.</p>
-            <a href="#contacto">Vestir a mi equipo <Arrow /></a>
+            <a className="service-cta" href="#contacto">Vestir a mi equipo <Arrow /></a>
           </div>
           <div className="service-tags"><span>Resistencia</span><span>Funcionalidad</span><span>Imagen</span></div>
         </div>
@@ -119,10 +120,10 @@ export default function Home() {
           <p>Un proceso claro, acompañado de principio a fin.</p>
         </div>
         <div className="steps">
-          <article><span>01</span><h3>Nos contás</h3><p>Conocemos tu necesidad, cantidades, talles y tiempos.</p></article>
-          <article><span>02</span><h3>Proponemos</h3><p>Definimos materiales, colores y terminaciones.</p></article>
-          <article><span>03</span><h3>Producimos</h3><p>Confeccionamos cada pedido con seguimiento cercano.</p></article>
-          <article><span>04</span><h3>Entregamos</h3><p>Coordinamos la entrega para que llegue como esperás.</p></article>
+          <article><div className="step-marker"><span>01</span></div><p className="step-kicker">Primera etapa</p><h3>Nos contás</h3><p>Conocemos tu necesidad, cantidades, talles y tiempos.</p></article>
+          <article><div className="step-marker"><span>02</span></div><p className="step-kicker">Segunda etapa</p><h3>Proponemos</h3><p>Definimos materiales, colores y terminaciones.</p></article>
+          <article><div className="step-marker"><span>03</span></div><p className="step-kicker">Tercera etapa</p><h3>Producimos</h3><p>Confeccionamos cada pedido con seguimiento cercano.</p></article>
+          <article><div className="step-marker"><span>04</span></div><p className="step-kicker">Cuarta etapa</p><h3>Entregamos</h3><p>Coordinamos la entrega para que llegue como esperás.</p></article>
         </div>
       </section>
 
