@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.wrangler/
+.next/
+.vinext/
+.env*
+*.log
+.gh-auth-*.txt
