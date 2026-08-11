@@ -298,7 +298,7 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
           {media.gallery.map((item, index) => {
             const label = productLabel(item.title);
             return <button
-              className="gallery-card reveal"
+              className="gallery-card"
               key={item.src}
               onClick={() => setSelected({ src: item.src, title: label })}
               style={{ "--gallery-delay": String((index % 8) * 45) + "ms" } as React.CSSProperties}
