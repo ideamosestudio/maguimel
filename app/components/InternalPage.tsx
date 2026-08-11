@@ -304,7 +304,12 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
               style={{ "--gallery-delay": String((index % 8) * 45) + "ms" } as React.CSSProperties}
               aria-label={"Ampliar " + label}
             >
-              <img src={asset(item.src)} alt={label} loading="lazy" />
+              <img
+                src={asset(item.src)}
+                alt={label}
+                loading={category === "publicidad" ? "eager" : "lazy"}
+                decoding="async"
+              />
               <span><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>
             </button>;
           })}
