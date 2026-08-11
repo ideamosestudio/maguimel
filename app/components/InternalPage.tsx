@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import catalog from "../catalog-manifest.json";
+import ContactForm from "./ContactForm";
 
 type CategoryKey = keyof typeof catalog;
 type GalleryItem = { src: string; title: string };
@@ -167,6 +168,7 @@ function ContactAndFooter() {
           </div>
           <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">Escribinos <Arrow /></a>
         </div>
+        <ContactForm />
         <div className="contact-grid">
           <div><span>Tel&eacute;fono</span><a href={phoneHref}>{phoneDisplay}</a></div>
           <div><span>Direcci&oacute;n</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mej&iacute;a</a></div>

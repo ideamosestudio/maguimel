@@ -1,4 +1,11 @@
 {
+  "_ContactForm-CsBTLpZn.js": {
+    "file": "_next/static/chunks/ContactForm-CsBTLpZn.js",
+    "name": "ContactForm",
+    "imports": [
+      "_framework-BgSIrAUN.js"
+    ]
+  },
   "_framework-BgSIrAUN.js": {
     "file": "_next/static/chunks/framework-BgSIrAUN.js",
     "name": "framework",
@@ -11,27 +18,29 @@
     "name": "rolldown-runtime"
   },
   "app/components/InternalPage.tsx": {
-    "file": "_next/static/chunks/InternalPage-B8vjFRU0.js",
+    "file": "_next/static/chunks/InternalPage-CL3_F8b-.js",
     "name": "InternalPage",
     "src": "app/components/InternalPage.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
+      "_ContactForm-CsBTLpZn.js",
       "_framework-BgSIrAUN.js"
     ]
   },
   "app/page.tsx": {
-    "file": "_next/static/chunks/page-Diobr0jm.js",
+    "file": "_next/static/chunks/page-DbzBpSeF.js",
     "name": "page",
     "src": "app/page.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
+      "_ContactForm-CsBTLpZn.js",
       "_framework-BgSIrAUN.js"
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-mHyVHm9d.js",
+    "file": "_next/static/chunks/layout-segment-context-Bpf1Msyo.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -42,7 +51,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-BprN7D4L.js",
+    "file": "_next/static/chunks/index-C6FbqF-U.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,

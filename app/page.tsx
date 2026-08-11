@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ContactForm from "./components/ContactForm";
 
 const phoneDisplay = "011 4464-4647";
 const phoneHref = "tel:+541144644647";
@@ -198,6 +199,7 @@ export default function Home() {
           </div>
           <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">Escribinos <Arrow /></a>
         </div>
+        <ContactForm />
         <div className="contact-grid">
           <div><span>Teléfono</span><a href={phoneHref}>{phoneDisplay}</a></div>
           <div><span>Dirección</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mejía</a></div>
