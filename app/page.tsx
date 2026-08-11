@@ -1,3 +1,5 @@
+"use client";
+
 const phoneDisplay = "011 4464-4647";
 const phoneHref = "tel:+541144644647";
 const mapsHref =
@@ -14,9 +16,26 @@ function Brand({ dark = false }: { dark?: boolean }) {
 const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
 
 export default function Home() {
+  const moveHero = (event: React.PointerEvent<HTMLElement>) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+    event.currentTarget.style.setProperty("--hero-x", x.toFixed(3));
+    event.currentTarget.style.setProperty("--hero-y", y.toFixed(3));
+  };
+
+  const resetHero = (event: React.PointerEvent<HTMLElement>) => {
+    event.currentTarget.style.setProperty("--hero-x", "0");
+    event.currentTarget.style.setProperty("--hero-y", "0");
+  };
+
   return (
     <main>
-      <section className="hero" id="home">
+      <section className="hero" id="home" onPointerMove={moveHero} onPointerLeave={resetHero}>
+        <div className="hero-bg-wrap" aria-hidden="true"><div className="hero-bg" /></div>
+        <div className="hero-person-wrap" aria-hidden="true">
+          <img className="hero-person" src="/images/slider-personaje.png" alt="" />
+        </div>
         <header className="site-header">
           <Brand />
           <nav className="desktop-nav" aria-label="Navegación principal">
