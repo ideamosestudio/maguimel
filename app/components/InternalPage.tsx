@@ -8,6 +8,7 @@ type GalleryItem = { src: string; title: string };
 
 const phoneDisplay = "011 4464-4647";
 const phoneHref = "tel:+541144644647";
+const whatsappHref = "https://wa.me/541121701747?text=Hola%20Textil%20Maguimel%2C%20quiero%20hacer%20una%20consulta.";
 const mapsHref =
   "https://www.google.com/maps/search/?api=1&query=Textil+Maguimel%2C+French+150%2C+Ramos+Mej%C3%ADa%2C+Buenos+Aires";
 
@@ -86,7 +87,41 @@ const content: Record<CategoryKey, {
 };
 
 const asset = (path: string) => ".." + path;
-const Arrow = () => <span className="arrow" aria-hidden="true">\u2197</span>;
+const Arrow = () => <span className="arrow" aria-hidden="true">&#8599;</span>;
+const closeMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  event.currentTarget.closest("details")?.removeAttribute("open");
+};
+
+function productLabel(value: string) {
+  const title = value.toLowerCase();
+  const labels: Array<[string, string]> = [
+    ["pollera pantalon", "Pollera pantal\u00f3n"],
+    ["campera polar", "Campera polar"],
+    ["campera abrigo", "Campera de abrigo"],
+    ["buzo medio cierre", "Buzo medio cierre"],
+    ["chomba ml", "Chomba manga larga"],
+    ["remera ml", "Remera manga larga"],
+    ["chaleco con bolsillos", "Chaleco de trabajo reflectivo"],
+    ["campera con reflex", "Campera de trabajo reflectiva"],
+    ["pintor", "Pintor escolar"],
+    ["pechera", "Pechera escolar"],
+    ["conjunto", "Conjunto deportivo"],
+    ["bermuda", "Bermuda"],
+    ["pantalon", "Pantal\u00f3n"],
+    ["campera", "Campera"],
+    ["chomba", "Chomba"],
+    ["remera", "Remera personalizada"],
+    ["chaleco", "Chaleco"],
+    ["cuello", "Cuello polar"],
+    ["cofia", "Cofia"],
+    ["jumper", "Jumper escolar"],
+    ["short", "Short"],
+    ["ambo", "Ambo"],
+    ["camisa", "Camisa de trabajo"],
+    ["buzo", "Buzo"],
+  ];
+  return labels.find(([token]) => title.includes(token))?.[1] ?? "Prenda personalizada";
+}
 
 function InternalBrand({ dark = false }: { dark?: boolean }) {
   return (
@@ -100,21 +135,21 @@ function InternalHeader() {
   return (
     <header className="site-header internal-header">
       <InternalBrand />
-      <nav className="desktop-nav" aria-label="Navegaci\u00f3n principal">
-        <a href="../#quienes-somos">Qui\u00e9nes somos</a>
+      <nav className="desktop-nav" aria-label="Navegaci&oacute;n principal">
+        <a href="../#quienes-somos">Qui&eacute;nes somos</a>
         <a href="../colegio/">Colegio</a>
         <a href="../publicidad/">Publicidad</a>
         <a href="../trabajo/">Trabajo</a>
       </nav>
       <a className="header-cta" href="#contacto">Contactanos</a>
       <details className="mobile-nav">
-        <summary aria-label="Abrir men\u00fa"><span /><span /></summary>
+        <summary aria-label="Abrir men&uacute;"><span /><span /></summary>
         <nav>
-          <a href="../">Inicio</a>
-          <a href="../colegio/">Colegio</a>
-          <a href="../publicidad/">Publicidad</a>
-          <a href="../trabajo/">Trabajo</a>
-          <a href="#contacto">Contacto</a>
+          <a href="../" onClick={closeMobileMenu}>Inicio</a>
+          <a href="../colegio/" onClick={closeMobileMenu}>Colegio</a>
+          <a href="../publicidad/" onClick={closeMobileMenu}>Publicidad</a>
+          <a href="../trabajo/" onClick={closeMobileMenu}>Trabajo</a>
+          <a href="#contacto" onClick={closeMobileMenu}>Contacto</a>
         </nav>
       </details>
     </header>
@@ -127,20 +162,20 @@ function ContactAndFooter() {
       <section className="contact section-dark" id="contacto">
         <div className="contact-top">
           <div>
-            <p className="eyebrow light">Hablemos de tu pr\u00f3ximo proyecto</p>
-            <h2>\u00bfQu\u00e9 necesit\u00e1s<br />vestir hoy?</h2>
+            <p className="eyebrow light">Hablemos de tu pr&oacute;ximo proyecto</p>
+            <h2>&iquest;Qu&eacute; necesit&aacute;s<br />vestir hoy?</h2>
           </div>
-          <a className="round-cta" href={phoneHref} aria-label={"Llamar al " + phoneDisplay}>Llamanos <Arrow /></a>
+          <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">Escribinos <Arrow /></a>
         </div>
         <div className="contact-grid">
-          <div><span>Tel\u00e9fono</span><a href={phoneHref}>{phoneDisplay}</a></div>
-          <div><span>Direcci\u00f3n</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mej\u00eda</a></div>
-          <div><span>Horarios</span><p>Lun a vie \u00b7 10\u201313 y 16\u201318<br />S\u00e1b \u00b7 10\u201313</p></div>
-          <div><span>C\u00f3mo llegar</span><a href={mapsHref} target="_blank" rel="noreferrer">Abrir en Google Maps <Arrow /></a></div>
+          <div><span>Tel&eacute;fono</span><a href={phoneHref}>{phoneDisplay}</a></div>
+          <div><span>Direcci&oacute;n</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mej&iacute;a</a></div>
+          <div><span>Horarios</span><p>Lun a vie &middot; 10&ndash;13 y 16&ndash;18<br />S&aacute;b &middot; 10&ndash;13</p></div>
+          <div><span>C&oacute;mo llegar</span><a href={mapsHref} target="_blank" rel="noreferrer">Abrir en Google Maps <Arrow /></a></div>
         </div>
         <div className="map-wrap">
           <iframe
-            title="Ubicaci\u00f3n de Textil Maguimel en Google Maps"
+            title="Ubicaci&oacute;n de Textil Maguimel en Google Maps"
             src="https://www.google.com/maps?q=French+150,+Ramos+Mejia,+Buenos+Aires&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -150,9 +185,9 @@ function ContactAndFooter() {
       <footer>
         <InternalBrand dark />
         <p>Uniformes escolares, laborales y publicitarios.</p>
-        <a href="#internal-home">Volver arriba \u2191</a>
+        <a href="#internal-home">Volver arriba &uarr;</a>
         <small>
-          <span>\u00a9 {new Date().getFullYear()} Textil Maguimel</span>
+          <span>&copy; {new Date().getFullYear()} Textil Maguimel</span>
           <a href="https://www.ideamos.com.ar" target="_blank" rel="noreferrer">Hecho por Estudio Ideamos</a>
         </small>
       </footer>
@@ -205,14 +240,12 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
         </div>
         <InternalHeader />
         <div className="internal-hero-content">
-          <p className="internal-breadcrumb"><a href="../">Inicio</a><span>/</span>{page.eyebrow}</p>
-          <p className="eyebrow light">{page.index} \u00b7 {page.eyebrow}</p>
           <h1>{page.title}</h1>
           <div className="hero-rule" />
           <p>{page.heroCopy}</p>
           <div className="hero-actions">
             <a className="button button--light" href="#galeria">Ver modelos</a>
-            <a className="button button--outline" href="#contacto">Solicitar presupuesto</a>
+            <a className="button button--outline" href={whatsappHref} target="_blank" rel="noreferrer">Solicitar presupuesto</a>
           </div>
         </div>
       </section>
@@ -256,28 +289,29 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
       <section className="internal-gallery section" id="galeria">
         <div className="gallery-heading reveal">
           <div>
-            <p className="eyebrow">Selecci\u00f3n de prendas</p>
+            <p className="eyebrow">Selecci&oacute;n de prendas</p>
             <h2>{page.galleryTitle}</h2>
           </div>
           <p>{page.galleryCopy}</p>
         </div>
         <div className="gallery-grid">
-          {media.gallery.map((item, index) => (
-            <button
+          {media.gallery.map((item, index) => {
+            const label = productLabel(item.title);
+            return <button
               className="gallery-card reveal"
               key={item.src}
-              onClick={() => setSelected(item)}
+              onClick={() => setSelected({ src: item.src, title: label })}
               style={{ "--gallery-delay": String((index % 8) * 45) + "ms" } as React.CSSProperties}
-              aria-label={"Ampliar " + item.title}
+              aria-label={"Ampliar " + label}
             >
-              <img src={asset(item.src)} alt={item.title} loading="lazy" />
-              <span><b>{String(index + 1).padStart(2, "0")}</b>{item.title}</span>
-            </button>
-          ))}
+              <img src={asset(item.src)} alt={label} loading="lazy" />
+              <span><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>
+            </button>;
+          })}
         </div>
       </section>
 
-      <nav className="category-navigation" aria-label="Otras l\u00edneas">
+      <nav className="category-navigation" aria-label="Otras l&iacute;neas">
         {(["colegio", "publicidad", "trabajo"] as CategoryKey[]).map((key) => (
           <a className={key === category ? "is-current" : ""} href={"../" + key + "/"} key={key}>
             <span>{content[key].index}</span>{content[key].eyebrow}
@@ -286,10 +320,14 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
       </nav>
 
       <ContactAndFooter />
+      <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir a Textil Maguimel por WhatsApp">
+        <img src="../images/whatsapp.svg" alt="" />
+        <span>WhatsApp</span>
+      </a>
 
       {selected && (
         <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={selected.title}>
-          <button className="gallery-modal-close" onClick={() => setSelected(null)} aria-label="Cerrar imagen">Cerrar \u00d7</button>
+          <button className="gallery-modal-close" onClick={() => setSelected(null)} aria-label="Cerrar imagen">Cerrar &times;</button>
           <figure>
             <img src={asset(selected.src)} alt={selected.title} />
             <figcaption>{selected.title}</figcaption>

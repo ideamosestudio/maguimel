@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const phoneDisplay = "011 4464-4647";
 const phoneHref = "tel:+541144644647";
+const whatsappHref = "https://wa.me/541121701747?text=Hola%20Textil%20Maguimel%2C%20quiero%20hacer%20una%20consulta.";
 const mapsHref =
   "https://www.google.com/maps/search/?api=1&query=Textil+Maguimel%2C+French+150%2C+Ramos+Mej%C3%ADa%2C+Buenos+Aires";
 
@@ -16,6 +17,9 @@ function Brand({ dark = false }: { dark?: boolean }) {
 }
 
 const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
+const closeMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  event.currentTarget.closest("details")?.removeAttribute("open");
+};
 
 export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
@@ -60,19 +64,19 @@ export default function Home() {
           <Brand />
           <nav className="desktop-nav" aria-label="Navegación principal">
             <a href="#quienes-somos">Quiénes somos</a>
-            <a href="#colegio">Colegio</a>
-            <a href="#publicidad">Publicidad</a>
-            <a href="#trabajo">Trabajo</a>
+            <a href="./colegio/">Colegio</a>
+            <a href="./publicidad/">Publicidad</a>
+            <a href="./trabajo/">Trabajo</a>
           </nav>
           <a className="header-cta" href="#contacto">Contactanos</a>
           <details className="mobile-nav">
             <summary aria-label="Abrir menú"><span /><span /></summary>
             <nav>
-              <a href="#quienes-somos">Quiénes somos</a>
-              <a href="#colegio">Colegio</a>
-              <a href="#publicidad">Publicidad</a>
-              <a href="#trabajo">Trabajo</a>
-              <a href="#contacto">Contacto</a>
+              <a href="#quienes-somos" onClick={closeMobileMenu}>Quiénes somos</a>
+              <a href="./colegio/" onClick={closeMobileMenu}>Colegio</a>
+              <a href="./publicidad/" onClick={closeMobileMenu}>Publicidad</a>
+              <a href="./trabajo/" onClick={closeMobileMenu}>Trabajo</a>
+              <a href="#contacto" onClick={closeMobileMenu}>Contacto</a>
             </nav>
           </details>
         </header>
@@ -85,8 +89,8 @@ export default function Home() {
             Producción propia, atención personalizada y pedidos a medida para vestir equipos que hacen la diferencia.
           </p>
           <div className="hero-actions">
-            <a className="button button--light" href={phoneHref}>Contactanos hoy</a>
-            <a className="button button--outline" href="#contacto">Quiero un presupuesto</a>
+            <a className="button button--light" href={whatsappHref} target="_blank" rel="noreferrer">Contactanos hoy</a>
+            <a className="button button--outline" href={whatsappHref} target="_blank" rel="noreferrer">Quiero un presupuesto</a>
           </div>
         </div>
         <a className="scroll-cue" href="#quienes-somos" aria-label="Descubrir más">
@@ -104,8 +108,8 @@ export default function Home() {
               <span>Textil</span><span>Confecci&oacute;n</span><span>Identidad</span>
             </div>
             <div className="intro-actions">
-              <a className="button button--dark" href="#colegio">Uniformes escolares</a>
-              <a className="button button--paper" href="#trabajo">Indumentaria de trabajo</a>
+              <a className="button button--dark" href="./colegio/">Uniformes escolares</a>
+              <a className="button button--paper" href="./trabajo/">Indumentaria de trabajo</a>
             </div>
           </div>
           <div className="intro-body">
@@ -128,9 +132,13 @@ export default function Home() {
             <p className="eyebrow light">Uniformes escolares</p>
             <h3>Colegio</h3>
             <p>Prendas cómodas, resistentes y fieles a la identidad de cada institución: chombas, buzos, remeras, equipos deportivos y más.</p>
-            <a className="service-cta" href="./colegio/">Ver l&iacute;nea Colegio</a>
+            <div className="service-actions">
+              <a className="service-cta" href={whatsappHref} target="_blank" rel="noreferrer">Consultar por mi colegio</a>
+              <a className="service-cta service-cta--more" href="./colegio/">Ver m&aacute;s</a>
+            </div>
           </div>
           <div className="service-tags"><span>Calidad</span><span>Comodidad</span><span>Identidad</span></div>
+          <a className="service-card-link" href="./colegio/" aria-label="Ver uniformes escolares" />
         </div>
 
         <div className="service-card service-card--publicity" id="publicidad">
@@ -139,9 +147,13 @@ export default function Home() {
             <p className="eyebrow light">Prendas que comunican</p>
             <h3>Publicidad</h3>
             <p>Convertimos tu marca en indumentaria que se ve y se recuerda. Producciones para eventos, promociones, equipos y campañas.</p>
-            <a className="service-cta" href="./publicidad/">Ver l&iacute;nea Publicidad</a>
+            <div className="service-actions">
+              <a className="service-cta" href={whatsappHref} target="_blank" rel="noreferrer">Potenciar mi marca</a>
+              <a className="service-cta service-cta--more" href="./publicidad/">Ver m&aacute;s</a>
+            </div>
           </div>
           <div className="service-tags"><span>Estampado</span><span>Bordado</span><span>Producción</span></div>
+          <a className="service-card-link" href="./publicidad/" aria-label="Ver indumentaria publicitaria" />
         </div>
 
         <div className="service-card service-card--image" id="trabajo">
@@ -150,9 +162,13 @@ export default function Home() {
             <p className="eyebrow light">Indumentaria profesional</p>
             <h3>Trabajo</h3>
             <p>Uniformes funcionales para el día a día, creados para representar a tu empresa y acompañar a tu equipo.</p>
-            <a className="service-cta" href="./trabajo/">Ver l&iacute;nea Trabajo</a>
+            <div className="service-actions">
+              <a className="service-cta" href={whatsappHref} target="_blank" rel="noreferrer">Vestir a mi equipo</a>
+              <a className="service-cta service-cta--more" href="./trabajo/">Ver m&aacute;s</a>
+            </div>
           </div>
           <div className="service-tags"><span>Resistencia</span><span>Funcionalidad</span><span>Imagen</span></div>
+          <a className="service-card-link" href="./trabajo/" aria-label="Ver indumentaria de trabajo" />
         </div>
       </section>
 
@@ -170,7 +186,7 @@ export default function Home() {
         </div>
         <div className="process-actions process-actions--after">
           <a className="button button--dark" href="#colegio">Ver nuestras l&iacute;neas</a>
-          <a className="button button--paper" href="#contacto">Solicitar presupuesto</a>
+          <a className="button button--paper" href={whatsappHref} target="_blank" rel="noreferrer">Solicitar presupuesto</a>
         </div>
       </section>
 
@@ -180,7 +196,7 @@ export default function Home() {
             <p className="eyebrow light">Hablemos de tu próximo proyecto</p>
             <h2>¿Qué necesitás<br />vestir hoy?</h2>
           </div>
-          <a className="round-cta" href={phoneHref} aria-label={`Llamar al ${phoneDisplay}`}>Llamanos <Arrow /></a>
+          <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">Escribinos <Arrow /></a>
         </div>
         <div className="contact-grid">
           <div><span>Teléfono</span><a href={phoneHref}>{phoneDisplay}</a></div>
@@ -207,6 +223,10 @@ export default function Home() {
           <a href="https://www.ideamos.com.ar" target="_blank" rel="noreferrer">Hecho por Estudio Ideamos</a>
         </small>
       </footer>
+      <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir a Textil Maguimel por WhatsApp">
+        <img src="/images/whatsapp.svg" alt="" />
+        <span>WhatsApp</span>
+      </a>
     </main>
   );
 }
