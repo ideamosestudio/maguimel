@@ -97,15 +97,19 @@ export default function Home() {
       <section className="intro section" id="quienes-somos">
         <div className="section-label"><span>01</span> Quiénes somos</div>
         <div className="intro-grid">
-          <div>
+          <div className="intro-statement">
             <p className="eyebrow">Textil Maguimel</p>
             <h2>Vestimos identidad.<br />Construimos confianza.</h2>
+            <div className="intro-detail" aria-label="Nuestros pilares">
+              <span>Textil</span><span>Confecci&oacute;n</span><span>Identidad</span>
+            </div>
             <div className="intro-actions">
               <a className="button button--dark" href="#colegio">Uniformes escolares</a>
               <a className="button button--paper" href="#trabajo">Indumentaria de trabajo</a>
             </div>
           </div>
           <div className="intro-body">
+            <span className="intro-accent" aria-hidden="true" />
             <p className="lead">Somos fabricantes de uniformes escolares, indumentaria de trabajo y prendas publicitarias.</p>
             <p>Desde Ramos Mejía acompañamos a instituciones y empresas con atención cercana, confección cuidada y soluciones pensadas para cada necesidad.</p>
             <div className="stats">
