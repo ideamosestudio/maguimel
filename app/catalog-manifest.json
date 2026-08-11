@@ -1,0 +1,465 @@
+{
+  "colegio": {
+    "gallery": [
+      {
+        "src": "/images/internal/colegio/colegio-001.webp",
+        "title": "Bermuda Cp"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-002.webp",
+        "title": "Bermuda Juan"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-003.webp",
+        "title": "Bermuda Principito"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-004.webp",
+        "title": "Bermuda Sarmiento"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-005.webp",
+        "title": "Buzo Cp"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-006.webp",
+        "title": "Buzo Juan (2)"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-007.webp",
+        "title": "Buzo Juan 23"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-008.webp",
+        "title": "Buzo Juan"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-009.webp",
+        "title": "Buzo Principito Nuevo"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-010.webp",
+        "title": "Campera Ppto Nueva"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-011.webp",
+        "title": "Campera Cp"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-012.webp",
+        "title": "Campera Ipe Nueva"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-013.webp",
+        "title": "Campera Juan"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-014.webp",
+        "title": "Campera Polar Del Esp Cp"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-015.webp",
+        "title": "Campera Polar"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-016.webp",
+        "title": "Campera Sarmiento"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-017.webp",
+        "title": "Chomba Cp Nueva"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-018.webp",
+        "title": "Chomba Juan 23 Nueva"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-019.webp",
+        "title": "Chomba Ml Cp Nuevo"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-020.webp",
+        "title": "Chomba Ml Juan Nuevo"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-021.webp",
+        "title": "Chomba Ml Principito"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-022.webp",
+        "title": "Chomba Ml Santo Domingo"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-023.webp",
+        "title": "Chomba Principito"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-024.webp",
+        "title": "Chomba Santo Domingoooo"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-025.webp",
+        "title": "Chomba Sarmiento"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-026.webp",
+        "title": "Chombas"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-027.webp",
+        "title": "Conjunto French"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-028.webp",
+        "title": "Conjunto El Sol"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-029.webp",
+        "title": "Conjunto French Secundaria"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-030.webp",
+        "title": "Conjunto French"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-031.webp",
+        "title": "Conjunto Ipe"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-032.webp",
+        "title": "Conjunto Principito Nuevo"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-033.webp",
+        "title": "Conjunto Principito"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-034.webp",
+        "title": "Conjunto Santo Domingo"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-035.webp",
+        "title": "Conjunto"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-036.webp",
+        "title": "Jumper"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-037.webp",
+        "title": "Pantalon Cp"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-038.webp",
+        "title": "Pantalon Gris"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-039.webp",
+        "title": "Pantalon Juan"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-040.webp",
+        "title": "Pantalon Sarmiento"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-041.webp",
+        "title": "Pecheras Jardin"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-042.webp",
+        "title": "Pintor Jean Piaget"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-043.webp",
+        "title": "Pollera Pantalon"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-044.webp",
+        "title": "Remera 23"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-045.webp",
+        "title": "Remera Cp"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-046.webp",
+        "title": "Remera Ml Juan 23"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-047.webp",
+        "title": "Remera Sarmiento"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-048.webp",
+        "title": "Short Juan 23"
+      },
+      {
+        "src": "/images/internal/colegio/colegio-049.webp",
+        "title": "Short Juan"
+      }
+    ],
+    "models": [
+      "/images/internal/colegio/colegio-modelo-01.webp",
+      "/images/internal/colegio/colegio-modelo-02.webp",
+      "/images/internal/colegio/colegio-modelo-03.webp"
+    ],
+    "hero": {
+      "background": "/images/internal/covers/colegio-hero-bg.webp",
+      "person": "/images/internal/covers/colegio-hero-person.webp"
+    }
+  },
+  "publicidad": {
+    "gallery": [
+      {
+        "src": "/images/internal/publicidad/publicidad-001.webp",
+        "title": "Buzo El Chueco"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-002.webp",
+        "title": "Campera Abrigo Canal 26"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-003.webp",
+        "title": "Campera Abrigo Los Chicos"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-004.webp",
+        "title": "Campera Aguamat"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-005.webp",
+        "title": "Campera Aruba"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-006.webp",
+        "title": "Campera Yoga"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-007.webp",
+        "title": "Chaleco Honda"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-008.webp",
+        "title": "Chaleco Peugot"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-009.webp",
+        "title": "Chomba Brown"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-010.webp",
+        "title": "Cofia Perpi"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-011.webp",
+        "title": "Cuellos Polares"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-012.webp",
+        "title": "Espalda Remera Uocra"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-013.webp",
+        "title": "Grizzly"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-014.webp",
+        "title": "Image 5C373E67"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-015.webp",
+        "title": "Image 6517Cf65"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-016.webp",
+        "title": "Image Dd31329C"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-017.webp",
+        "title": "Image E550B914"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-018.webp",
+        "title": "Img 20210309 Wa0011"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-019.webp",
+        "title": "Img 20210824 Wa0015"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-020.webp",
+        "title": "Img 20210827 Wa0021"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-021.webp",
+        "title": "Remera Arieta"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-022.webp",
+        "title": "Remera Con Reflex Los 2 Colos"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-023.webp",
+        "title": "Remera Delantera Uocra"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-024.webp",
+        "title": "Remera Dj"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-025.webp",
+        "title": "Remera Kunfu Panda"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-026.webp",
+        "title": "Remera Lct"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-027.webp",
+        "title": "Remera Lp"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-028.webp",
+        "title": "Remera Ml Honda"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-029.webp",
+        "title": "Remera Paprika"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-030.webp",
+        "title": "Remera Perpi"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-031.webp",
+        "title": "Remera Salsa"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-032.webp",
+        "title": "Remera Speed"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-033.webp",
+        "title": "Remera Verdu"
+      },
+      {
+        "src": "/images/internal/publicidad/publicidad-034.webp",
+        "title": "Remera Yoga"
+      }
+    ],
+    "models": [
+      "/images/internal/publicidad/publicidad-modelo-01.webp",
+      "/images/internal/publicidad/publicidad-modelo-02.webp",
+      "/images/internal/publicidad/publicidad-modelo-03.webp"
+    ],
+    "hero": {
+      "background": "/images/internal/covers/publicidad-hero-bg.webp",
+      "person": "/images/internal/covers/publicidad-hero-person.webp"
+    }
+  },
+  "trabajo": {
+    "gallery": [
+      {
+        "src": "/images/internal/trabajo/trabajo-001.webp",
+        "title": "Ambo Con Recorte"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-002.webp",
+        "title": "Ambo"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-003.webp",
+        "title": "Bermuda Lct"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-004.webp",
+        "title": "Bermuda"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-005.webp",
+        "title": "Buzo Mc"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-006.webp",
+        "title": "Buzo Medio Cierre Aguamat"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-007.webp",
+        "title": "Buzo Medio Cierre Studio Lll"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-008.webp",
+        "title": "Camisa Trabajo"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-009.webp",
+        "title": "Camisa"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-010.webp",
+        "title": "Campera Abrigo Reflex"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-011.webp",
+        "title": "Campera Aqualaf"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-012.webp",
+        "title": "Campera Con Reflex"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-013.webp",
+        "title": "Chaleco Con Bolsillos Y Reflex"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-014.webp",
+        "title": "Chaleco Gas"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-015.webp",
+        "title": "Chaleco Proplan"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-016.webp",
+        "title": "Chaleco"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-017.webp",
+        "title": "Chomba Combinada"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-018.webp",
+        "title": "Chomba Grizzly"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-019.webp",
+        "title": "Chomba Ml Aguamat"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-020.webp",
+        "title": "Chomba Osp"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-021.webp",
+        "title": "Chomba Recorte Vibrotech"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-022.webp",
+        "title": "Pantalon Acudir"
+      },
+      {
+        "src": "/images/internal/trabajo/trabajo-023.webp",
+        "title": "Pantalon Trabajo"
+      }
+    ],
+    "models": [
+      "/images/internal/trabajo/trabajo-modelo-01.webp",
+      "/images/internal/trabajo/trabajo-modelo-02.webp",
+      "/images/internal/trabajo/trabajo-modelo-03.webp"
+    ],
+    "hero": {
+      "background": "/images/internal/covers/trabajo-hero-bg.webp",
+      "person": "/images/internal/covers/trabajo-hero-person.webp"
+    }
+  }
+}

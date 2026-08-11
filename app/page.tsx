@@ -128,7 +128,7 @@ export default function Home() {
             <p className="eyebrow light">Uniformes escolares</p>
             <h3>Colegio</h3>
             <p>Prendas cómodas, resistentes y fieles a la identidad de cada institución: chombas, buzos, remeras, equipos deportivos y más.</p>
-            <a className="service-cta" href="#contacto">Consultar por mi colegio</a>
+            <a className="service-cta" href="./colegio/">Ver l&iacute;nea Colegio</a>
           </div>
           <div className="service-tags"><span>Calidad</span><span>Comodidad</span><span>Identidad</span></div>
         </div>
@@ -139,7 +139,7 @@ export default function Home() {
             <p className="eyebrow light">Prendas que comunican</p>
             <h3>Publicidad</h3>
             <p>Convertimos tu marca en indumentaria que se ve y se recuerda. Producciones para eventos, promociones, equipos y campañas.</p>
-            <a className="service-cta" href="#contacto">Potenciar mi marca</a>
+            <a className="service-cta" href="./publicidad/">Ver l&iacute;nea Publicidad</a>
           </div>
           <div className="service-tags"><span>Estampado</span><span>Bordado</span><span>Producción</span></div>
         </div>
@@ -150,7 +150,7 @@ export default function Home() {
             <p className="eyebrow light">Indumentaria profesional</p>
             <h3>Trabajo</h3>
             <p>Uniformes funcionales para el día a día, creados para representar a tu empresa y acompañar a tu equipo.</p>
-            <a className="service-cta" href="#contacto">Vestir a mi equipo</a>
+            <a className="service-cta" href="./trabajo/">Ver l&iacute;nea Trabajo</a>
           </div>
           <div className="service-tags"><span>Resistencia</span><span>Funcionalidad</span><span>Imagen</span></div>
         </div>
@@ -161,16 +161,16 @@ export default function Home() {
         <div className="process-heading">
           <h2>De la idea a la prenda,<br />sin vueltas.</h2>
           <p>Un proceso claro, acompañado de principio a fin.</p>
-          <div className="process-actions">
-            <a className="button button--dark" href="#colegio">Ver nuestras líneas</a>
-            <a className="button button--paper" href="#contacto">Solicitar presupuesto</a>
-          </div>
         </div>
         <div className="steps">
           <article><div className="step-marker"><span>01</span></div><p className="step-kicker">Primera etapa</p><h3>Nos contás</h3><p>Conocemos tu necesidad, cantidades, talles y tiempos.</p></article>
           <article><div className="step-marker"><span>02</span></div><p className="step-kicker">Segunda etapa</p><h3>Proponemos</h3><p>Definimos materiales, colores y terminaciones.</p></article>
           <article><div className="step-marker"><span>03</span></div><p className="step-kicker">Tercera etapa</p><h3>Producimos</h3><p>Confeccionamos cada pedido con seguimiento cercano.</p></article>
           <article><div className="step-marker"><span>04</span></div><p className="step-kicker">Cuarta etapa</p><h3>Entregamos</h3><p>Coordinamos la entrega para que llegue como esperás.</p></article>
+        </div>
+        <div className="process-actions process-actions--after">
+          <a className="button button--dark" href="#colegio">Ver nuestras l&iacute;neas</a>
+          <a className="button button--paper" href="#contacto">Solicitar presupuesto</a>
         </div>
       </section>
 
