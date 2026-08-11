@@ -32,6 +32,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: #1a2021;
   overflow: hidden;
 }
+.hero-slide {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.hero-slide--active { opacity: 1; }
 .hero-bg-wrap,
 .hero-person-wrap {
   position: absolute;
@@ -40,24 +48,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
   transition: transform .65s cubic-bezier(.2,.7,.2,1);
 }
 .hero-bg-wrap {
-  z-index: -3;
+  z-index: 0;
   inset: -5%;
   transform: translate3d(calc(var(--hero-x) * -22px), calc(var(--hero-y) * -14px), 0);
 }
 .hero-bg {
   width: 100%;
   height: 100%;
-  background: url('../../../images/slider-fondo.jpg') center / cover no-repeat;
   animation: hero-background-drift 12s ease-in-out infinite alternate;
   will-change: transform;
 }
+.hero-bg--one { background: url('../../../images/slider-fondo.jpg') center / cover no-repeat; }
+.hero-bg--two { background: url('../../../images/slider-fondo-publicidad.jpg') center / cover no-repeat; animation-direction: alternate-reverse; }
 .hero-person-wrap {
-  z-index: -2;
+  z-index: 1;
   right: 1.5%;
   bottom: -4%;
   height: 104%;
   transform: translate3d(calc(var(--hero-x) * 13px), calc(var(--hero-y) * 8px), 0);
 }
+.hero-slide--second .hero-person-wrap { right: 5%; }
+.hero-slide--second .hero-person { animation-direction: alternate-reverse; }
 .hero-person {
   display: block;
   width: auto;
@@ -222,6 +233,8 @@ footer small a:hover { opacity: .55; }
   .hero-bg { background-position: 58% center; }
   .hero-person-wrap { right: -24%; bottom: -1%; width: min(118vw, 560px); height: auto; transform: none; opacity: .72; }
   .hero-person { width: 100%; height: auto; }
+  .hero-slide--second .hero-bg { background-position: 54% center; }
+  .hero-slide--second .hero-person-wrap { right: -18%; }
   .hero::before { background: linear-gradient(180deg, rgba(6,8,8,.78) 0%, rgba(6,8,8,.36) 45%, rgba(6,8,8,.82) 100%); }
   .site-header, .hero-content { width: 84%; }
   .hero-content { margin-top: auto; margin-bottom: 20px; padding: 44px 0 70px; text-align: center; }

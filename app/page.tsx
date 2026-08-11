@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 const phoneDisplay = "011 4464-4647";
 const phoneHref = "tel:+541144644647";
 const mapsHref =
@@ -16,6 +18,16 @@ function Brand({ dark = false }: { dark?: boolean }) {
 const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
 
 export default function Home() {
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setHeroSlide((current) => (current + 1) % 2);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   const moveHero = (event: React.PointerEvent<HTMLElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
@@ -32,9 +44,17 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="home" onPointerMove={moveHero} onPointerLeave={resetHero}>
-        <div className="hero-bg-wrap" aria-hidden="true"><div className="hero-bg" /></div>
-        <div className="hero-person-wrap" aria-hidden="true">
-          <img className="hero-person" src="/images/slider-personaje.png" alt="" />
+        <div className={`hero-slide ${heroSlide === 0 ? "hero-slide--active" : ""}`} aria-hidden="true">
+          <div className="hero-bg-wrap"><div className="hero-bg hero-bg--one" /></div>
+          <div className="hero-person-wrap">
+            <img className="hero-person" src="/images/slider-personaje.png" alt="" />
+          </div>
+        </div>
+        <div className={`hero-slide hero-slide--second ${heroSlide === 1 ? "hero-slide--active" : ""}`} aria-hidden="true">
+          <div className="hero-bg-wrap"><div className="hero-bg hero-bg--two" /></div>
+          <div className="hero-person-wrap">
+            <img className="hero-person" src="/images/slider-personaje-publicidad.png" alt="" />
+          </div>
         </div>
         <header className="site-header">
           <Brand />
