@@ -17,7 +17,7 @@ if (files.length !== 34) {
 }
 
 for (const [index, file] of files.entries()) {
-  const outputName = `publicidad-${String(index + 1).padStart(3, "0")}.webp`;
+  const outputName = `publicidad-v2-${String(index + 1).padStart(3, "0")}.webp`;
   await sharp(path.join(sourceDir, file), { failOn: "error" })
     .rotate()
     .resize({ width: 1400, height: 1600, fit: "inside", withoutEnlargement: true })

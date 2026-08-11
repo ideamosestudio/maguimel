@@ -299,15 +299,18 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
         <div className="gallery-grid">
           {media.gallery.map((item, index) => {
             const label = productLabel(item.title);
+            const imageSrc = category === "publicidad"
+              ? item.src.replace("/publicidad-", "/publicidad-v2-")
+              : item.src;
             return <button
               className="gallery-card"
-              key={item.src}
-              onClick={() => setSelected({ src: item.src, title: label })}
+              key={imageSrc}
+              onClick={() => setSelected({ src: imageSrc, title: label })}
               style={{ "--gallery-delay": String((index % 8) * 45) + "ms" } as React.CSSProperties}
               aria-label={"Ampliar " + label}
             >
               <img
-                src={asset(item.src)}
+                src={asset(imageSrc)}
                 alt={label}
                 loading={category === "publicidad" ? "eager" : "lazy"}
                 decoding="async"
