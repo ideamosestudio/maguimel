@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import catalog from "../catalog-manifest.json";
-import ContactForm from "./ContactForm";
+import ContactForm, { SocialNetworks } from "./ContactForm";
 
 type CategoryKey = keyof typeof catalog;
 type GalleryItem = { src: string; title: string };
@@ -54,7 +54,7 @@ const content: Record<CategoryKey, {
     heroCopy: "Convertimos una identidad visual en prendas que se ven, se usan y mantienen presente a tu marca.",
     introTitle: "Prendas que hacen visible a tu marca.",
     introLead: "La indumentaria promocional funciona cuando la marca y la prenda se sienten parte de una misma idea.",
-    introCopy: "Producimos remeras, buzos, camperas, chalecos y accesorios para acciones, eventos, equipos comerciales y campa\u00f1as. Adaptamos colores, ubicaci\u00f3n de marca y terminaciones a cada contexto de uso.",
+    introCopy: "Producimos remeras, chombas, buzos, camperas, chalecos y accesorios para acciones, eventos, equipos comerciales y campa\u00f1as. Adaptamos colores, ubicaci\u00f3n de marca y terminaciones a cada contexto de uso.",
     features: [
       { number: "01", title: "Personalizaci\u00f3n", copy: "Bordado y estampado aplicados con criterio para respetar la identidad visual." },
       { number: "02", title: "Presencia de marca", copy: "Prendas pensadas para comunicar de manera clara, consistente y memorable." },
@@ -171,9 +171,10 @@ function ContactAndFooter() {
         <ContactForm />
         <div className="contact-grid">
           <div><span>Tel&eacute;fono</span><a href={phoneHref}>{phoneDisplay}</a></div>
-          <div><span>Direcci&oacute;n</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mej&iacute;a</a></div>
-          <div><span>Horarios</span><p>Lun a vie &middot; 10&ndash;13 y 16&ndash;18<br />S&aacute;b &middot; 10&ndash;13</p></div>
+          <div><span>Direcci&oacute;n</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mej&iacute;a, Buenos Aires</a></div>
+          <div><span>Horarios</span><p>Lunes a viernes &middot; 10 a 13 y 15 a 18 hs</p></div>
           <div><span>C&oacute;mo llegar</span><a href={mapsHref} target="_blank" rel="noreferrer">Abrir en Google Maps <Arrow /></a></div>
+          <SocialNetworks />
         </div>
         <div className="map-wrap">
           <iframe

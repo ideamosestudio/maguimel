@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ContactForm from "./components/ContactForm";
+import ContactForm, { SocialNetworks } from "./components/ContactForm";
 
 const phoneDisplay = "011 4464-4647";
 const phoneHref = "tel:+541144644647";
@@ -27,8 +27,8 @@ export default function Home() {
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setHeroSlide((current) => (current + 1) % 2);
-    }, 3000);
+      setHeroSlide((current) => (current + 1) % 3);
+    }, 1500);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -61,6 +61,12 @@ export default function Home() {
             <img className="hero-person" src="/images/slider-personaje-publicidad.png" alt="" />
           </div>
         </div>
+        <div className={`hero-slide hero-slide--school ${heroSlide === 2 ? "hero-slide--active" : ""}`} aria-hidden="true">
+          <div className="hero-bg-wrap"><div className="hero-bg hero-bg--three" /></div>
+          <div className="hero-person-wrap">
+            <img className="hero-person" src="/images/chicos-colegio-person.png" alt="" />
+          </div>
+        </div>
         <header className="site-header">
           <Brand />
           <nav className="desktop-nav" aria-label="Navegación principal">
@@ -83,11 +89,11 @@ export default function Home() {
         </header>
 
         <div className="hero-content">
-          <p className="eyebrow light">Uniformes · Producción propia · Ramos Mejía</p>
+          <p className="eyebrow light">Uniformes · Producción propia · Ramos Mejía · Buenos Aires · Argentina</p>
           <h1>Indumentaria para<br />colegios y empresas</h1>
           <div className="hero-rule" />
           <p className="hero-copy">
-            Producción propia, atención personalizada y pedidos a medida para vestir equipos que hacen la diferencia.
+            Producción propia, atención personalizada y pedidos a medida para vestir tu equipo. Despachamos envíos al interior del país.
           </p>
           <div className="hero-actions">
             <a className="button button--light" href={whatsappHref} target="_blank" rel="noreferrer">Contactanos hoy</a>
@@ -117,10 +123,11 @@ export default function Home() {
             <span className="intro-accent" aria-hidden="true" />
             <p className="lead">Somos fabricantes de uniformes escolares, indumentaria de trabajo y prendas publicitarias.</p>
             <p>Desde Ramos Mejía acompañamos a instituciones y empresas con atención cercana, confección cuidada y soluciones pensadas para cada necesidad.</p>
+            <p>Más de 40 años al servicio de instituciones, PyMEs y empresas.</p>
             <div className="stats">
               <div><strong>3</strong><span>líneas de<br />especialidad</span></div>
               <div><strong>1:1</strong><span>atención<br />personalizada</span></div>
-              <div><strong>100%</strong><span>hecho a<br />medida</span></div>
+              <div><strong>100%</strong><span>tu necesidad<br />interpretada</span></div>
             </div>
           </div>
         </div>
@@ -202,9 +209,10 @@ export default function Home() {
         <ContactForm />
         <div className="contact-grid">
           <div><span>Teléfono</span><a href={phoneHref}>{phoneDisplay}</a></div>
-          <div><span>Dirección</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mejía</a></div>
-          <div><span>Horarios</span><p>Lun a vie · 10–13 y 16–18<br />Sáb · 10–13</p></div>
+          <div><span>Dirección</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mejía, Buenos Aires</a></div>
+          <div><span>Horarios</span><p>Lunes a viernes · 10 a 13 y 15 a 18 hs</p></div>
           <div><span>Cómo llegar</span><a href={mapsHref} target="_blank" rel="noreferrer">Abrir en Google Maps <Arrow /></a></div>
+          <SocialNetworks />
         </div>
         <div className="map-wrap">
           <iframe
