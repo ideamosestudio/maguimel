@@ -70,8 +70,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .hero-slide--second .hero-person-wrap { right: 5%; }
 .hero-slide--second .hero-person { animation-direction: alternate-reverse; }
-.hero-slide--school .hero-person-wrap { right: 2%; }
-.hero-slide--school .hero-person { animation: colegio-person-zoom 9s ease-in-out infinite alternate; }
+.hero-slide--school .hero-person-wrap {
+  right: 12.5%;
+  bottom: -24px;
+  height: 100%;
+  transform: none;
+}
+.hero-slide--school .hero-person { animation: none; }
 .hero-person {
   display: block;
   width: auto;
@@ -548,7 +553,7 @@ footer small a:hover { opacity: .55; }
   .hero-slide--second .hero-bg { background-position: 54% center; }
   .hero-slide--second .hero-person-wrap { right: -18%; }
   .hero-slide--school .hero-bg { background-position: 56% center; }
-  .hero-slide--school .hero-person-wrap { right: -4%; width: min(82vw, 420px); opacity: .74; }
+  .hero-slide--school .hero-person-wrap { right: -4%; bottom: -1%; width: min(82vw, 420px); height: auto; opacity: .74; }
   .hero::before { background: linear-gradient(180deg, rgba(6,8,8,.78) 0%, rgba(6,8,8,.36) 45%, rgba(6,8,8,.82) 100%); }
   .site-header, .hero-content { width: 84%; }
   .hero-content { margin-top: auto; margin-bottom: 20px; padding: 44px 0 70px; text-align: center; }
