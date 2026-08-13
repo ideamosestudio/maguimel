@@ -173,7 +173,7 @@ function ContactAndFooter() {
           <div><span>Tel&eacute;fono</span><a href={phoneHref}>{phoneDisplay}</a></div>
           <div><span>Direcci&oacute;n</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mej&iacute;a, Buenos Aires</a></div>
           <div><span>Horarios</span><p>Lunes a viernes &middot; 10 a 13 y 15 a 18 hs</p></div>
-          <div><span>C&oacute;mo llegar</span><a href={mapsHref} target="_blank" rel="noreferrer">Abrir en Google Maps <Arrow /></a></div>
+          <div><span>Escribinos</span><a href="mailto:textilmaguimel@gmail.com">textilmaguimel@gmail.com</a></div>
           <SocialNetworks />
         </div>
         <div className="map-wrap">
@@ -245,7 +245,11 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
         <div className="internal-hero-content">
           <h1>{page.title}</h1>
           <div className="hero-rule" />
-          <p>{page.heroCopy}</p>
+          <p>
+            {category === "colegio" ? (
+              <>Dise&ntilde;amos y confeccionamos prendas c&oacute;modas,<br className="desktop-only-break" /> resistentes y fieles a la identidad de cada instituci&oacute;n.</>
+            ) : page.heroCopy}
+          </p>
           <div className="hero-actions">
             <a className="button button--light" href="#galeria">Ver modelos</a>
             <a className="button button--outline" href={whatsappHref} target="_blank" rel="noreferrer">Solicitar presupuesto</a>

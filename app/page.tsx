@@ -64,7 +64,7 @@ export default function Home() {
         <div className={`hero-slide hero-slide--school ${heroSlide === 2 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap"><div className="hero-bg hero-bg--three" /></div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/chicos-colegio-person.png" alt="" />
+            <img className="hero-person" src="/images/home-colegio-person.png" alt="" />
           </div>
         </div>
         <header className="site-header">
@@ -211,7 +211,7 @@ export default function Home() {
           <div><span>Teléfono</span><a href={phoneHref}>{phoneDisplay}</a></div>
           <div><span>Dirección</span><a href={mapsHref} target="_blank" rel="noreferrer">French 150<br />Ramos Mejía, Buenos Aires</a></div>
           <div><span>Horarios</span><p>Lunes a viernes · 10 a 13 y 15 a 18 hs</p></div>
-          <div><span>Cómo llegar</span><a href={mapsHref} target="_blank" rel="noreferrer">Abrir en Google Maps <Arrow /></a></div>
+          <div><span>Escribinos</span><a href="mailto:textilmaguimel@gmail.com">textilmaguimel@gmail.com</a></div>
           <SocialNetworks />
         </div>
         <div className="map-wrap">
