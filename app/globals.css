@@ -332,7 +332,11 @@ footer small a:hover { opacity: .55; }
   height: 104%;
   transform: translate3d(calc(var(--hero-x) * 13px), calc(var(--hero-y) * 8px), 0);
 }
-.internal-page--colegio .internal-hero-person-wrap { right: 8%; }
+.internal-page--colegio .internal-hero-person-wrap {
+  right: 0;
+  bottom: calc(-4% - 80px);
+  transform: none;
+}
 .internal-page--colegio .internal-hero-person-wrap img { animation: colegio-person-zoom 9s ease-in-out infinite alternate; }
 .internal-page--publicidad .internal-hero-person-wrap { right: 1%; }
 .internal-page--trabajo .internal-hero-person-wrap { right: 5%; }
@@ -498,8 +502,8 @@ footer small a:hover { opacity: .55; }
 }
 
 @keyframes colegio-person-zoom {
-  from { transform: scale(1.035) translate3d(0, 0, 0); }
-  to { transform: scale(1.09) translate3d(-.5%, -.7%, 0); }
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.025) translate3d(0, 0, 0); }
 }
 
 @keyframes process-line {
