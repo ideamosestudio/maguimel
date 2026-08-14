@@ -30,7 +30,7 @@ export default function Home() {
 
     const interval = window.setInterval(() => {
       setHeroSlide((current) => (current + 1) % 3);
-    }, 8000);
+    }, 12000);
 
     return () => window.clearInterval(interval);
   }, []);
