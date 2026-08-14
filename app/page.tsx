@@ -12,7 +12,7 @@ const mapsHref =
 function Brand({ dark = false }: { dark?: boolean }) {
   return (
     <a className={`brand ${dark ? "brand--dark" : ""}`} href="#home" aria-label="Textil Maguimel, inicio">
-      <img src="/images/logo-maguimel.png" alt="Textil Maguimel" />
+      <img src="/images/logo-maguimel.webp" alt="Textil Maguimel" width={1294} height={360} />
     </a>
   );
 }
@@ -26,9 +26,11 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const interval = window.setInterval(() => {
       setHeroSlide((current) => (current + 1) % 3);
-    }, 1500);
+    }, 8000);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -52,19 +54,19 @@ export default function Home() {
         <div className={`hero-slide ${heroSlide === 0 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap"><div className="hero-bg hero-bg--one" /></div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/slider-personaje.png" alt="" />
+            <img className="hero-person" src="/images/slider-personaje.webp" alt="" width={850} height={1200} fetchPriority="high" decoding="async" />
           </div>
         </div>
         <div className={`hero-slide hero-slide--second ${heroSlide === 1 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap"><div className="hero-bg hero-bg--two" /></div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/slider-personaje-publicidad.png" alt="" />
+            <img className="hero-person" src="/images/slider-personaje-publicidad.webp" alt="" width={802} height={1152} decoding="async" />
           </div>
         </div>
         <div className={`hero-slide hero-slide--school ${heroSlide === 2 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap"><div className="hero-bg hero-bg--three" /></div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/home-colegio-person.png" alt="" />
+            <img className="hero-person" src="/images/home-colegio-person.webp" alt="" width={546} height={1056} decoding="async" />
           </div>
         </div>
         <header className="site-header">
@@ -204,7 +206,7 @@ export default function Home() {
             <p className="eyebrow light">Hablemos de tu próximo proyecto</p>
             <h2>¿Qué necesitás<br />vestir hoy?</h2>
           </div>
-          <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">Escribinos <Arrow /></a>
+          <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribinos por WhatsApp">Escribinos <Arrow /></a>
         </div>
         <ContactForm />
         <div className="contact-grid">
@@ -234,7 +236,7 @@ export default function Home() {
         </small>
       </footer>
       <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir a Textil Maguimel por WhatsApp">
-        <img src="/images/whatsapp.svg" alt="" />
+        <img src="/images/whatsapp.svg" alt="" width={29} height={29} />
         <span>WhatsApp</span>
       </a>
     </main>
