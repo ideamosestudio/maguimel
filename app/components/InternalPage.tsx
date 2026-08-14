@@ -127,7 +127,7 @@ function productLabel(value: string) {
 function InternalBrand({ dark = false }: { dark?: boolean }) {
   return (
     <a className={"brand " + (dark ? "brand--dark" : "")} href="../" aria-label="Textil Maguimel, inicio">
-      <img src="../images/logo-maguimel.png" alt="Textil Maguimel" />
+      <img src="../images/logo-maguimel.webp" alt="Textil Maguimel" width={1294} height={360} />
     </a>
   );
 }
@@ -166,7 +166,7 @@ function ContactAndFooter() {
             <p className="eyebrow light">Hablemos de tu pr&oacute;ximo proyecto</p>
             <h2>&iquest;Qu&eacute; necesit&aacute;s<br />vestir hoy?</h2>
           </div>
-          <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">Escribinos <Arrow /></a>
+          <a className="round-cta" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribinos por WhatsApp">Escribinos <Arrow /></a>
         </div>
         <ContactForm />
         <div className="contact-grid">
@@ -203,6 +203,39 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
   const media = catalog[category];
   const [selected, setSelected] = useState<GalleryItem | null>(null);
 
+  const pageUrl = "https://textilmaguimel.com.ar/" + category + "/";
+  const pageStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: "https://textilmaguimel.com.ar/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: page.eyebrow,
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        name: page.eyebrow,
+        serviceType: page.eyebrow,
+        url: pageUrl,
+        description: page.introLead,
+        provider: { "@id": "https://textilmaguimel.com.ar/#business" },
+        areaServed: "Argentina",
+      },
+    ],
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")),
@@ -234,12 +267,16 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
 
   return (
     <main className={"internal-page internal-page--" + category}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageStructuredData).replace(/</g, "\\u003c") }}
+      />
       <section className="internal-hero" id="internal-home" onPointerMove={moveHero}>
         <div className="internal-hero-bg-wrap" aria-hidden="true">
           <div className="internal-hero-bg" style={{ backgroundImage: "url(" + asset(media.hero.background) + ")" }} />
         </div>
         <div className="internal-hero-person-wrap" aria-hidden="true">
-          <img src={asset(media.hero.person)} alt="" />
+          <img src={asset(media.hero.person)} alt="" fetchPriority="high" decoding="async" />
         </div>
         <InternalHeader />
         <div className="internal-hero-content">
@@ -304,9 +341,7 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
         <div className="gallery-grid">
           {media.gallery.map((item, index) => {
             const label = productLabel(item.title);
-            const imageSrc = category === "publicidad"
-              ? item.src.replace("/publicidad-", "/publicidad-v2-")
-              : item.src;
+            const imageSrc = item.src;
             return <button
               className="gallery-card"
               key={imageSrc}
@@ -317,7 +352,7 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
               <img
                 src={asset(imageSrc)}
                 alt={label}
-                loading={category === "publicidad" ? "eager" : "lazy"}
+                loading="lazy"
                 decoding="async"
               />
               <span><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>
@@ -336,7 +371,7 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
 
       <ContactAndFooter />
       <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir a Textil Maguimel por WhatsApp">
-        <img src="../images/whatsapp.svg" alt="" />
+        <img src="../images/whatsapp.svg" alt="" width={29} height={29} />
         <span>WhatsApp</span>
       </a>
 
