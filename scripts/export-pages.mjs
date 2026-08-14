@@ -21,10 +21,8 @@ const routes = [
 ];
 
 async function renderRoute({ pathname, directory, prefix }) {
-  const response = await workerModule.default.fetch(
+  const response = await workerModule.default(
     new Request("http://localhost" + pathname, { headers: { accept: "text/html" } }),
-    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
-    { waitUntil() {}, passThroughOnException() {} },
   );
 
   if (!response.ok) throw new Error("Static render failed for " + pathname + ": " + response.status);
