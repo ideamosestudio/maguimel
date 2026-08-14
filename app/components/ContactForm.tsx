@@ -1,3 +1,9 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
+
+const FORM_ENDPOINT = "https://api.textilmaguimel.com.ar/contact.php";
+
 export function SocialNetworks() {
   return (
     <div className="contact-socials">
@@ -33,6 +39,32 @@ export function SocialNetworks() {
 }
 
 export default function ContactForm() {
+  const [submitState, setSubmitState] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    setSubmitState("sending");
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("No se pudo enviar la consulta");
+      }
+
+      form.reset();
+      setSubmitState("success");
+    } catch {
+      setSubmitState("error");
+    }
+  };
+
   return (
     <div className="contact-form-shell">
       <div className="contact-form-intro">
@@ -41,53 +73,61 @@ export default function ContactForm() {
         <p>Dejanos tus datos y una breve descripci&oacute;n. El equipo de Textil Maguimel se pondr&aacute; en contacto con vos.</p>
       </div>
       <div>
-        <p className="contact-form-success" id="mensaje-enviado" role="status">
-          Gracias. Recibimos tu consulta y te responderemos a la brevedad.
-        </p>
+        {submitState === "success" && (
+          <p className="contact-form-status contact-form-status--success" role="status">
+            Gracias. Recibimos tu consulta y te responderemos a la brevedad.
+          </p>
+        )}
+        {submitState === "error" && (
+          <p className="contact-form-status contact-form-status--error" role="alert">
+            No pudimos enviar la consulta. Intent&aacute; nuevamente o escribinos a info@textilmaguimel.com.ar.
+          </p>
+        )}
         <form
           className="contact-form"
-          action="https://formsubmit.co/info@textilmaguimel.com.ar"
+          action={FORM_ENDPOINT}
           method="POST"
+          onSubmit={handleSubmit}
+          aria-busy={submitState === "sending"}
         >
-        <input type="hidden" name="_subject" value="Nueva consulta desde la web de Textil Maguimel" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://ideamosestudio.github.io/maguimel/#mensaje-enviado" />
-        <input className="form-honey" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
+          <input className="form-honey" type="text" name="website" tabIndex={-1} autoComplete="off" />
 
-        <label>
-          <span>Nombre y apellido *</span>
-          <input type="text" name="Nombre" autoComplete="name" required />
-        </label>
-        <label>
-          <span>Email *</span>
-          <input type="email" name="Email" autoComplete="email" required />
-        </label>
-        <label>
-          <span>Tel&eacute;fono</span>
-          <input type="tel" name="Telefono" autoComplete="tel" />
-        </label>
-        <label>
-          <span>Localidad</span>
-          <input type="text" name="Localidad" autoComplete="address-level2" />
-        </label>
-        <label>
-          <span>Tipo de consulta</span>
-          <select name="Tipo de consulta" defaultValue="">
-            <option value="" disabled>Seleccion&aacute; una opci&oacute;n</option>
-            <option>Uniformes escolares</option>
-            <option>Indumentaria publicitaria</option>
-            <option>Indumentaria de trabajo</option>
-            <option>Otra consulta</option>
-          </select>
-        </label>
-        <label className="contact-form-message">
-          <span>Mensaje *</span>
-          <textarea name="Mensaje" rows={5} required />
-        </label>
+          <label>
+            <span>Nombre y apellido *</span>
+            <input type="text" name="name" autoComplete="name" maxLength={120} required />
+          </label>
+          <label>
+            <span>Email *</span>
+            <input type="email" name="email" autoComplete="email" maxLength={190} required />
+          </label>
+          <label>
+            <span>Tel&eacute;fono</span>
+            <input type="tel" name="phone" autoComplete="tel" maxLength={60} />
+          </label>
+          <label>
+            <span>Localidad</span>
+            <input type="text" name="location" autoComplete="address-level2" maxLength={120} />
+          </label>
+          <label>
+            <span>Tipo de consulta</span>
+            <select name="inquiry_type" defaultValue="">
+              <option value="" disabled>Seleccion&aacute; una opci&oacute;n</option>
+              <option>Uniformes escolares</option>
+              <option>Indumentaria publicitaria</option>
+              <option>Indumentaria de trabajo</option>
+              <option>Otra consulta</option>
+            </select>
+          </label>
+          <label className="contact-form-message">
+            <span>Mensaje *</span>
+            <textarea name="message" rows={5} maxLength={4000} required />
+          </label>
           <div className="contact-form-submit">
             <p>Al enviar, acept&aacute;s que te contactemos para responder tu consulta.</p>
-            <button type="submit">Enviar consulta <span aria-hidden="true">&#8599;</span></button>
+            <button type="submit" disabled={submitState === "sending"}>
+              {submitState === "sending" ? "Enviando..." : "Enviar consulta"}
+              <span aria-hidden="true">&#8599;</span>
+            </button>
           </div>
         </form>
       </div>
