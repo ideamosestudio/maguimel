@@ -29,6 +29,7 @@ async function renderRoute({ pathname, directory, prefix }) {
 
   let html = await response.text();
   html = html
+    .replaceAll("https://textilmaguimel.com.ar/images/", "__ABSOLUTE_IMAGES__")
     .replaceAll("../images/", "__RELATIVE_IMAGES__")
     .replaceAll("/_next/", prefix + "_next/")
     .replaceAll("/images/", prefix + "images/")
