@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://textilmaguimel.com.ar/sitemap.xml
