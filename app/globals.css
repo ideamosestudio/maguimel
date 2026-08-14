@@ -222,7 +222,7 @@ h2 { margin: 0; font-size: clamp(45px, 5.4vw, 82px); line-height: .98; font-weig
 .contact-form-shell { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(55px, 8vw, 130px); margin-top: 90px; padding: 56px 0 62px; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
 .contact-form-intro h3 { margin: 16px 0 24px; color: white; font-size: clamp(35px, 4vw, 58px); line-height: 1; letter-spacing: -.035em; }
 .contact-form-intro > p:last-child { max-width: 390px; margin: 0; color: rgba(255,255,255,.62); font-size: 14px; font-weight: 300; line-height: 1.7; }
-.contact-form-status { margin: 0 0 30px; padding: 16px 19px; border-left: 3px solid var(--lime); background: rgba(195,255,19,.08); color: white; font-size: 13px; line-height: 1.5; }
+.contact-form-status { grid-column: 1 / -1; margin: 0; padding: 16px 19px; border-left: 3px solid var(--lime); background: rgba(195,255,19,.08); color: white; font-size: 13px; line-height: 1.5; }
 .contact-form-status--error { border-left-color: #ff776d; background: rgba(255,119,109,.1); }
 .contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; position: relative; }
 .contact-form label { display: block; text-align: left; }
