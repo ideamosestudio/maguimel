@@ -3,6 +3,7 @@ dist/
 .wrangler/
 .next/
 .vinext/
+.npm-cache/
 .env*
 *.log
 .gh-auth*.txt
