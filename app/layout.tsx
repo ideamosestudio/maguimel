@@ -7,7 +7,10 @@ const oswald = Oswald({ variable: "--font-oswald", subsets: ["latin"], weight: [
 const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], weight: ["500", "600"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://textilmaguimel.com.ar/"),\n  icons: {\n    icon: "/favicon.svg",\n  },
+  metadataBase: new URL("https://textilmaguimel.com.ar/"),
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: "Textil Maguimel | Uniformes para colegios y empresas",
   description: "Uniformes escolares, indumentaria de trabajo y prendas publicitarias a medida en Ramos Mejía.",
   openGraph: {
