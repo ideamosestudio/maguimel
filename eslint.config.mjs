@@ -35,6 +35,10 @@ const eslintConfig = defineConfig([
         version: "detect",
       },
     },
+    rules: {
+      // GitHub Pages sirve los WebP ya optimizados directamente, sin un servidor de imágenes.
+      "@next/next/no-img-element": "off",
+    },
   },
 ]);
 

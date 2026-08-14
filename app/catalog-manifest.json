@@ -204,146 +204,146 @@
       "/images/internal/colegio/colegio-modelo-03.webp"
     ],
     "hero": {
-      "background": "/images/chicos-colegio-bg.jpg",
-      "person": "/images/chicos-colegio-person.png"
+      "background": "/images/chicos-colegio-bg.webp",
+      "person": "/images/chicos-colegio-person.webp"
     }
   },
   "publicidad": {
     "gallery": [
       {
-        "src": "/images/internal/publicidad/publicidad-001.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-001.webp",
         "title": "Buzo El Chueco"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-002.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-002.webp",
         "title": "Campera Abrigo Canal 26"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-003.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-003.webp",
         "title": "Campera Abrigo Los Chicos"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-004.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-004.webp",
         "title": "Campera Aguamat"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-005.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-005.webp",
         "title": "Campera Aruba"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-006.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-006.webp",
         "title": "Campera Yoga"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-007.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-007.webp",
         "title": "Chaleco Honda"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-008.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-008.webp",
         "title": "Chaleco Peugot"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-009.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-009.webp",
         "title": "Chomba Brown"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-010.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-010.webp",
         "title": "Cofia Perpi"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-011.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-011.webp",
         "title": "Cuellos Polares"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-012.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-012.webp",
         "title": "Espalda Remera Uocra"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-013.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-013.webp",
         "title": "Grizzly"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-014.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-014.webp",
         "title": "Image 5C373E67"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-015.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-015.webp",
         "title": "Image 6517Cf65"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-016.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-016.webp",
         "title": "Image Dd31329C"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-017.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-017.webp",
         "title": "Image E550B914"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-018.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-018.webp",
         "title": "Img 20210309 Wa0011"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-019.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-019.webp",
         "title": "Img 20210824 Wa0015"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-020.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-020.webp",
         "title": "Img 20210827 Wa0021"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-021.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-021.webp",
         "title": "Remera Arieta"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-022.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-022.webp",
         "title": "Remera Con Reflex Los 2 Colos"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-023.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-023.webp",
         "title": "Remera Delantera Uocra"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-024.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-024.webp",
         "title": "Remera Dj"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-025.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-025.webp",
         "title": "Remera Kunfu Panda"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-026.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-026.webp",
         "title": "Remera Lct"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-027.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-027.webp",
         "title": "Remera Lp"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-028.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-028.webp",
         "title": "Remera Ml Honda"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-029.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-029.webp",
         "title": "Remera Paprika"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-030.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-030.webp",
         "title": "Remera Perpi"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-031.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-031.webp",
         "title": "Remera Salsa"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-032.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-032.webp",
         "title": "Remera Speed"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-033.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-033.webp",
         "title": "Remera Verdu"
       },
       {
-        "src": "/images/internal/publicidad/publicidad-034.webp",
+        "src": "/images/internal/publicidad/publicidad-v2-034.webp",
         "title": "Remera Yoga"
       }
     ],

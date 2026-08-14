@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
 import InternalPage from "../components/InternalPage";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Indumentaria publicitaria | Textil Maguimel",
-  description: "Prendas personalizadas para marcas, eventos, promociones y equipos. Producci\u00f3n a medida con bordado y estampado.",
-};
+  description:
+    "Prendas publicitarias personalizadas para marcas, eventos y promociones. Producción a medida con bordado y estampado en Buenos Aires.",
+  path: "/publicidad/",
+});
 
 export default function PublicidadPage() {
   return <InternalPage category="publicidad" />;

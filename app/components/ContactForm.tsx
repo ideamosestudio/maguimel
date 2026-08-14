@@ -80,7 +80,7 @@ export default function ContactForm() {
           onSubmit={handleSubmit}
           aria-busy={submitState === "sending"}
         >
-          <input className="form-honey" type="text" name="website" tabIndex={-1} autoComplete="off" />
+          <input className="form-honey" type="text" name="website" tabIndex={-1} autoComplete="off" aria-label="No completar este campo" />
 
           <label>
             <span>Nombre y apellido *</span>
