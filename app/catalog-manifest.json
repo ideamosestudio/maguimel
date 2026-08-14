@@ -204,8 +204,8 @@
       "/images/internal/colegio/colegio-modelo-03.webp"
     ],
     "hero": {
-      "background": "/images/chicos-colegio-bg.jpg",
-      "person": "/images/chicos-colegio-person.png"
+      "background": "/images/chicos-colegio-bg.webp",
+      "person": "/images/chicos-colegio-person.webp"
     }
   },
   "publicidad": {
