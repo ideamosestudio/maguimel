@@ -51,12 +51,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   transform: translate3d(calc(var(--hero-x) * -22px), calc(var(--hero-y) * -14px), 0);
 }
 .hero-bg {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-.hero-bg--one { background: url('../../../images/slider-fondo.webp') center / cover no-repeat; }
-.hero-bg--two { background: url('../../../images/slider-fondo-publicidad.webp') center / cover no-repeat; }
-.hero-bg--three { background: url('../../../images/home-colegio-bg.webp') center / cover no-repeat; }
 .hero-person-wrap {
   z-index: 1;
   right: 1.5%;
