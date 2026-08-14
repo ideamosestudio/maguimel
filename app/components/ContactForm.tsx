@@ -73,16 +73,6 @@ export default function ContactForm() {
         <p>Dejanos tus datos y una breve descripci&oacute;n. El equipo de Textil Maguimel se pondr&aacute; en contacto con vos.</p>
       </div>
       <div>
-        {submitState === "success" && (
-          <p className="contact-form-status contact-form-status--success" role="status">
-            Gracias. Recibimos tu consulta y te responderemos a la brevedad.
-          </p>
-        )}
-        {submitState === "error" && (
-          <p className="contact-form-status contact-form-status--error" role="alert">
-            No pudimos enviar la consulta. Intent&aacute; nuevamente o escribinos a info@textilmaguimel.com.ar.
-          </p>
-        )}
         <form
           className="contact-form"
           action={FORM_ENDPOINT}
@@ -129,6 +119,16 @@ export default function ContactForm() {
               <span aria-hidden="true">&#8599;</span>
             </button>
           </div>
+          {submitState === "success" && (
+            <p className="contact-form-status contact-form-status--success" role="status">
+              Gracias. Recibimos tu consulta y te responderemos a la brevedad.
+            </p>
+          )}
+          {submitState === "error" && (
+            <p className="contact-form-status contact-form-status--error" role="alert">
+              No pudimos enviar la consulta. Intent&aacute; nuevamente o escribinos a info@textilmaguimel.com.ar.
+            </p>
+          )}
         </form>
       </div>
     </div>
