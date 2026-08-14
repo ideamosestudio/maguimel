@@ -49,6 +49,7 @@ const rendered = await Promise.all(routes.map(renderRoute));
 await Promise.all([
   writeFile(resolve(output, "404.html"), rendered[0]),
   writeFile(resolve(output, ".nojekyll"), ""),
+  writeFile(resolve(output, "CNAME"), "textilmaguimel.com.ar\n"),
 ]);
 
 console.log("Static GitHub Pages bundle created in docs/");
