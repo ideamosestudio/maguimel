@@ -35,8 +35,7 @@ async function renderRoute({ pathname, directory, prefix }) {
     .replaceAll("/_next/", prefix + "_next/")
     .replaceAll("/images/", prefix + "images/")
     .replaceAll("__RELATIVE_IMAGES__", "../images/")
-    .replaceAll('href="/og.png"', 'href="' + prefix + 'og.png"')
-    .replaceAll('content="/og.png"', 'content="https://ideamosestudio.github.io/maguimel/og.png"');
+    .replaceAll("https://ideamosestudio.github.io/maguimel/", "https://textilmaguimel.com.ar/");
 
   const destination = resolve(output, directory);
   await mkdir(destination, { recursive: true });
@@ -45,9 +44,13 @@ async function renderRoute({ pathname, directory, prefix }) {
 }
 
 const rendered = await Promise.all(routes.map(renderRoute));
+const notFound = rendered[0].replace(
+  "<head>",
+  '<head><meta name="robots" content="noindex, nofollow"/>',
+);
 
 await Promise.all([
-  writeFile(resolve(output, "404.html"), rendered[0]),
+  writeFile(resolve(output, "404.html"), notFound),
   writeFile(resolve(output, ".nojekyll"), ""),
   writeFile(resolve(output, "CNAME"), "textilmaguimel.com.ar\n"),
 ]);
