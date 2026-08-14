@@ -33,6 +33,7 @@ async function renderRoute({ pathname, directory, prefix }) {
     .replaceAll("/_next/", prefix + "_next/")
     .replaceAll("/images/", prefix + "images/")
     .replaceAll("__RELATIVE_IMAGES__", "../images/")
+    .replaceAll("__ABSOLUTE_IMAGES__", "https://textilmaguimel.com.ar/images/")
     .replaceAll("https://ideamosestudio.github.io/maguimel/", "https://textilmaguimel.com.ar/");
 
   const destination = resolve(output, directory);
