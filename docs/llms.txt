@@ -1,0 +1,26 @@
+# Textil Maguimel
+
+> Fabricante de uniformes escolares, ropa de trabajo y prendas publicitarias en Ramos Mejía, Buenos Aires, Argentina.
+
+Textil Maguimel diseña y confecciona indumentaria personalizada para colegios, empresas, comercios e instituciones. Atiende consultas y pedidos a medida desde French 150, Ramos Mejía.
+
+## Servicios
+
+- [Uniformes escolares](https://textilmaguimel.com.ar/colegio/): diseño y confección de uniformes para instituciones educativas.
+- [Ropa de trabajo](https://textilmaguimel.com.ar/trabajo/): indumentaria laboral y uniformes para empresas y equipos.
+- [Prendas publicitarias](https://textilmaguimel.com.ar/publicidad/): remeras, buzos, gorras y artículos textiles personalizados para marcas y eventos.
+- [Contacto](https://textilmaguimel.com.ar/#contacto): formulario de consulta y canales de atención directa.
+
+## Información del negocio
+
+- Dirección: French 150, Ramos Mejía, Buenos Aires, Argentina.
+- Teléfono: 011 4464-4647.\n- WhatsApp: +54 9 11 2170-1747.
+- Correo: textilmaguimel@gmail.com.
+- Horarios: lunes a viernes de 10:00 a 13:00 y de 15:00 a 18:00.
+- Área de atención: Argentina.
+
+## Recursos
+
+- [Página principal](https://textilmaguimel.com.ar/): presentación general de Textil Maguimel.
+- [Mapa del sitio](https://textilmaguimel.com.ar/sitemap.xml): listado de páginas públicas para rastreadores.
+- [Política de rastreo](https://textilmaguimel.com.ar/robots.txt): reglas de acceso para buscadores y asistentes de IA.

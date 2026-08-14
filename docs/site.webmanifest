@@ -1,0 +1,17 @@
+{
+  "name": "Textil Maguimel",
+  "short_name": "Maguimel",
+  "description": "Uniformes escolares, laborales y publicitarios a medida.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121413",
+  "theme_color": "#c8ff21",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
