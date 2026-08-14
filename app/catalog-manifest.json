@@ -348,9 +348,9 @@
       }
     ],
     "models": [
-      "/images/internal/publicidad/publicidad-v2-modelo-01.webp",
-      "/images/internal/publicidad/publicidad-v2-modelo-02.webp",
-      "/images/internal/publicidad/publicidad-v2-modelo-03.webp"
+      "/images/internal/publicidad/publicidad-modelo-01.webp",
+      "/images/internal/publicidad/publicidad-modelo-02.webp",
+      "/images/internal/publicidad/publicidad-modelo-03.webp"
     ],
     "hero": {
       "background": "/images/internal/covers/publicidad-hero-bg.webp",
