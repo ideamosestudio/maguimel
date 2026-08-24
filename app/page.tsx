@@ -51,12 +51,12 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="home" onPointerMove={moveHero} onPointerLeave={resetHero}>
-        <div className={`hero-slide ${heroSlide === 0 ? "hero-slide--active" : ""}`} aria-hidden="true">
+        <div className={`hero-slide ${heroSlide === 2 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap">
-            <img className="hero-bg" src="/images/slider-fondo.webp" alt="" width={1920} height={1080} fetchPriority="high" decoding="async" />
+            <img className="hero-bg" src="/images/slider-fondo.webp" alt="" width={1920} height={1080} fetchPriority="low" decoding="async" />
           </div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/slider-personaje.webp" alt="" width={850} height={1200} fetchPriority="high" decoding="async" />
+            <img className="hero-person" src="/images/slider-personaje.webp" alt="" width={850} height={1200} decoding="async" />
           </div>
         </div>
         <div className={`hero-slide hero-slide--second ${heroSlide === 1 ? "hero-slide--active" : ""}`} aria-hidden="true">
@@ -67,12 +67,12 @@ export default function Home() {
             <img className="hero-person" src="/images/slider-personaje-publicidad.webp" alt="" width={802} height={1152} decoding="async" />
           </div>
         </div>
-        <div className={`hero-slide hero-slide--school ${heroSlide === 2 ? "hero-slide--active" : ""}`} aria-hidden="true">
+        <div className={`hero-slide hero-slide--school ${heroSlide === 0 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap">
-            <img className="hero-bg" src="/images/home-colegio-bg.webp" alt="" width={1920} height={1080} fetchPriority="low" decoding="async" />
+            <img className="hero-bg" src="/images/home-colegio-bg.webp" alt="" width={1920} height={1080} fetchPriority="high" decoding="async" />
           </div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/home-colegio-person.webp" alt="" width={546} height={1056} decoding="async" />
+            <img className="hero-person" src="/images/home-colegio-person.webp" alt="" width={546} height={1056} fetchPriority="high" decoding="async" />
           </div>
         </div>
         <header className="site-header">
