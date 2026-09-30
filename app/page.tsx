@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import StudioCredit from "./components/StudioCredit";
 import ContactForm, { SocialNetworks } from "./components/ContactForm";
 
 const phoneDisplay = "011 4464-4647";
@@ -248,7 +249,7 @@ export default function Home() {
         <a href="#home">Volver arriba ↑</a>
         <small>
           <span>© {new Date().getFullYear()} Textil Maguimel</span>
-          <a href="https://www.ideamos.com.ar" target="_blank" rel="noreferrer">Hecho por Estudio Ideamos</a>
+          <StudioCredit imagePrefix="/" />
         </small>
       </footer>
       <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir a Textil Maguimel por WhatsApp">

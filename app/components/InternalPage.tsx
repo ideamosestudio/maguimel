@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import catalog from "../catalog-manifest.json";
+import StudioCredit from "./StudioCredit";
 import ContactForm, { SocialNetworks } from "./ContactForm";
 
 type CategoryKey = keyof typeof catalog;
@@ -191,7 +192,7 @@ function ContactAndFooter() {
         <a href="#internal-home">Volver arriba &uarr;</a>
         <small>
           <span>&copy; {new Date().getFullYear()} Textil Maguimel</span>
-          <a href="https://www.ideamos.com.ar" target="_blank" rel="noreferrer">Hecho por Estudio Ideamos</a>
+          <StudioCredit imagePrefix="../" />
         </small>
       </footer>
     </>

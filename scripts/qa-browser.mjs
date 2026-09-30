@@ -12,6 +12,15 @@ for (const width of [390,1366]) {
  page.on('console',m=>{if(m.type()==='error' && /Content Security Policy|Refused/.test(m.text())) errors.push(m.text());});
  for (const route of ['/','/colegio/','/publicidad/','/trabajo/']) {
   await page.goto('http://127.0.0.1:4173'+route); await page.waitForTimeout(1200);
+  for (const section of await page.locator('main > section, main > footer').all()) {
+    await section.scrollIntoViewIfNeeded(); await page.waitForTimeout(80);
+  }
+  await page.locator('.studio-credit').scrollIntoViewIfNeeded(); await page.waitForTimeout(150);
+  if (await page.locator('.whatsapp-float').evaluate(e=>getComputedStyle(e).visibility) !== 'hidden') throw Error('WhatsApp overlaps footer credit');
+  if (await page.locator('.studio-credit').getAttribute('href') !== 'https://ideamos.com.ar') throw Error('Incorrect studio link');
+  await page.screenshot({path:out+'/'+width+'-'+(route.split('/')[1]||'home')+'-footer.png'});
+  await page.evaluate(() => window.scrollTo({top:0,behavior:'instant'})); await page.waitForTimeout(150);
+  if (await page.locator('.whatsapp-float').evaluate(e=>getComputedStyle(e).visibility) !== 'visible') throw Error('WhatsApp did not return');
   await page.screenshot({path:out+'/'+width+'-'+(route.split('/')[1]||'home')+'.png',fullPage:true});
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
@@ -27,6 +36,27 @@ for (const width of [390,1366]) {
  }
  results.push({width,errors}); await context.close();
 }
+const motionPage=await browser.newPage({viewport:{width:390,height:844}});
+await motionPage.clock.install();
+await motionPage.goto('http://127.0.0.1:4173/');
+await motionPage.clock.fastForward(5000);
+await motionPage.getByRole('button',{name:'Pausar imágenes'}).click();
+await motionPage.clock.fastForward(24000);
+if (!await motionPage.locator('.hero-slide--school').evaluate(e=>e.classList.contains('hero-slide--active'))) throw Error('Pause failed');
+await motionPage.getByRole('button',{name:'Reanudar imágenes'}).click();
+await motionPage.clock.fastForward(12000);
+if (!await motionPage.locator('.hero-slide--second').evaluate(e=>e.classList.contains('hero-slide--active'))) throw Error('Resume failed');
+await motionPage.emulateMedia({reducedMotion:'reduce'});
+await motionPage.locator('.mobile-nav summary').click();
+await motionPage.locator('.mobile-nav a[href="#contacto"]').click();
+await motionPage.clock.fastForward(1000);
+if (await motionPage.locator('.contact').evaluate(e=>Math.abs(e.getBoundingClientRect().top)) > 100) throw Error('Contact anchor navigation failed');
+await motionPage.goto('http://127.0.0.1:4173/');
+await motionPage.locator('.mobile-nav summary').click();
+await motionPage.locator('.mobile-nav a[href="./colegio/"]').click();
+await motionPage.waitForURL('**/colegio/');
+await motionPage.close();
+results.push({interactions:'Pause, resume and mobile navigation passed'});
 const page=await browser.newPage();
 await page.route('https://api.textilmaguimel.com.ar/contact.php',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:false})}));
 await page.goto('http://127.0.0.1:4173/');
