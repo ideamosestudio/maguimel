@@ -78,6 +78,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Uniformes escolares y de trabajo | Textil Maguimel",
   description,
+  referrer: "strict-origin-when-cross-origin",
   applicationName: "Textil Maguimel",
   keywords: [
     "uniformes escolares",

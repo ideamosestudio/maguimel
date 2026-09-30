@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import StudioCredit from "./components/StudioCredit";
 import ContactForm, { SocialNetworks } from "./components/ContactForm";
 
 const phoneDisplay = "011 4464-4647";
@@ -12,7 +13,7 @@ const mapsHref =
 function Brand({ dark = false }: { dark?: boolean }) {
   return (
     <a className={`brand ${dark ? "brand--dark" : ""}`} href="#home" aria-label="Textil Maguimel, inicio">
-      <img src="/images/logo-maguimel.webp" alt="Textil Maguimel" width={1294} height={360} />
+      <img src="/images/logo-maguimel-small.webp" alt="Textil Maguimel" width={1294} height={360} />
     </a>
   );
 }
@@ -24,18 +25,27 @@ const closeMobileMenu = (event: React.MouseEvent<HTMLAnchorElement>) => {
 
 export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
+  const [loadSlides, setLoadSlides] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const interval = window.setInterval(() => {
       setHeroSlide((current) => (current + 1) % 3);
     }, 12000);
 
     return () => window.clearInterval(interval);
+  }, [paused]);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setTimeout(() => setLoadSlides(true), 4000);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const moveHero = (event: React.PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
@@ -50,23 +60,23 @@ export default function Home() {
 
   return (
     <main>
-      <section className="hero" id="home" onPointerMove={moveHero} onPointerLeave={resetHero}>
-        <div className={`hero-slide ${heroSlide === 2 ? "hero-slide--active" : ""}`} aria-hidden="true">
+      <section className="hero" id="home" data-paused={paused} onPointerMove={moveHero} onPointerLeave={resetHero}>
+        {loadSlides && <div className={`hero-slide ${heroSlide === 2 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap">
-            <img className="hero-bg" src="/images/slider-fondo.webp" alt="" width={1920} height={1080} fetchPriority="low" decoding="async" />
+            <img className="hero-bg" src="/images/slider-fondo.webp" alt="" width={1920} height={1080} fetchPriority="low" loading="lazy" decoding="async" />
           </div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/slider-personaje.webp" alt="" width={850} height={1200} decoding="async" />
+            <img className="hero-person" src="/images/slider-personaje.webp" alt="" width={850} height={1200} fetchPriority="low" loading="lazy" decoding="async" />
           </div>
-        </div>
-        <div className={`hero-slide hero-slide--second ${heroSlide === 1 ? "hero-slide--active" : ""}`} aria-hidden="true">
+        </div>}
+        {loadSlides && <div className={`hero-slide hero-slide--second ${heroSlide === 1 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap">
-            <img className="hero-bg" src="/images/slider-fondo-publicidad.webp" alt="" width={1920} height={1080} fetchPriority="low" decoding="async" />
+            <img className="hero-bg" src="/images/slider-fondo-publicidad.webp" alt="" width={1920} height={1080} fetchPriority="low" loading="lazy" decoding="async" />
           </div>
           <div className="hero-person-wrap">
-            <img className="hero-person" src="/images/slider-personaje-publicidad.webp" alt="" width={802} height={1152} decoding="async" />
+            <img className="hero-person" src="/images/slider-personaje-publicidad.webp" alt="" width={802} height={1152} fetchPriority="low" loading="lazy" decoding="async" />
           </div>
-        </div>
+        </div>}
         <div className={`hero-slide hero-slide--school ${heroSlide === 0 ? "hero-slide--active" : ""}`} aria-hidden="true">
           <div className="hero-bg-wrap">
             <img className="hero-bg" src="/images/home-colegio-bg.webp" alt="" width={1920} height={1080} fetchPriority="high" decoding="async" />
@@ -108,6 +118,7 @@ export default function Home() {
             <a className="button button--outline" href={whatsappHref} target="_blank" rel="noreferrer">Quiero un presupuesto</a>
           </div>
         </div>
+        <button className="hero-pause" type="button" aria-pressed={paused} onClick={() => setPaused(!paused)}>{paused ? "Reanudar imágenes" : "Pausar imágenes"}</button>
         <a className="scroll-cue" href="#quienes-somos" aria-label="Descubrir más">
           <span>Descubrí más</span><b>↓</b>
         </a>
@@ -238,7 +249,7 @@ export default function Home() {
         <a href="#home">Volver arriba ↑</a>
         <small>
           <span>© {new Date().getFullYear()} Textil Maguimel</span>
-          <a href="https://www.ideamos.com.ar" target="_blank" rel="noreferrer">Hecho por Estudio Ideamos</a>
+          <StudioCredit imagePrefix="/" />
         </small>
       </footer>
       <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Escribir a Textil Maguimel por WhatsApp">

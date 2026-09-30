@@ -1,0 +1,36 @@
+{
+  "environment": "Local gzip export; simulated Lighthouse; not field CWV",
+  "mobile": {
+    "scores": {
+      "performance": 92,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 3260.2800000000007,
+    "tbtMs": 91.21500000000003,
+    "cls": 0.002262798068640175
+  },
+  "desktop": {
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 696.9441999999999,
+    "tbtMs": 7,
+    "cls": 0.0001313274622655222
+  },
+  "referenceMobile": {
+    "scores": {
+      "performance": 88,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 3460.0334000000003,
+    "tbtMs": 14,
+    "cls": 0
+  }
+}

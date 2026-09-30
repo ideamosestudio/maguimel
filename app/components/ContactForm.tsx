@@ -43,6 +43,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (submitState === "sending") return;
 
     const form = event.currentTarget;
     setSubmitState("sending");
@@ -52,9 +53,11 @@ export default function ContactForm() {
         method: "POST",
         headers: { Accept: "application/json" },
         body: new FormData(form),
+        signal: AbortSignal.timeout(20000),
       });
 
-      if (!response.ok) {
+      const result = await response.json();
+      if (!response.ok || result.ok !== true) {
         throw new Error("No se pudo enviar la consulta");
       }
 
