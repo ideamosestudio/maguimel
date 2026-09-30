@@ -1,0 +1,147 @@
+{
+  "environment": "Local static export, gzip enabled, Chrome, Lighthouse lab; not production or field CWV",
+  "routes": [
+    "/",
+    "/colegio/",
+    "/publicidad/",
+    "/trabajo/"
+  ],
+  "viewports": [
+    390,
+    1366
+  ],
+  "auditVulnerabilities": 0,
+  "browser": [
+    {
+      "width": 390,
+      "route": "/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/colegio/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/publicidad/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/trabajo/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "errors": []
+    },
+    {
+      "width": 1366,
+      "route": "/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/colegio/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/publicidad/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "route": "/trabajo/",
+      "overflow": false,
+      "broken": [],
+      "violations": []
+    },
+    {
+      "width": 1366,
+      "errors": []
+    },
+    {
+      "form": "mock success and failure passed, no real mail sent"
+    }
+  ],
+  "mobile": {
+    "version": "13.5.0",
+    "date": "2026-09-30T18:21:40.862Z",
+    "categories": {
+      "performance": 85,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1692.427,
+        "unit": "millisecond"
+      },
+      "largest-contentful-paint": {
+        "value": 3519.3539999999994,
+        "unit": "millisecond"
+      },
+      "total-blocking-time": {
+        "value": 162.39324999999997,
+        "unit": "millisecond"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "unit": "unitless"
+      },
+      "speed-index": {
+        "value": 4290.421959129349,
+        "unit": "millisecond"
+      }
+    }
+  },
+  "desktop": {
+    "version": "13.5.0",
+    "date": "2026-09-30T18:22:05.448Z",
+    "categories": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 425.303,
+        "unit": "millisecond"
+      },
+      "largest-contentful-paint": {
+        "value": 690.606,
+        "unit": "millisecond"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "unit": "millisecond"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.0001313274622655222,
+        "unit": "unitless"
+      },
+      "speed-index": {
+        "value": 692.0636774093751,
+        "unit": "millisecond"
+      }
+    }
+  }
+}
