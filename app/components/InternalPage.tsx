@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import catalog from "../catalog-manifest.json";
 import ContactForm, { SocialNetworks } from "./ContactForm";
 
@@ -127,7 +127,7 @@ function productLabel(value: string) {
 function InternalBrand({ dark = false }: { dark?: boolean }) {
   return (
     <a className={"brand " + (dark ? "brand--dark" : "")} href="../" aria-label="Textil Maguimel, inicio">
-      <img src="../images/logo-maguimel.webp" alt="Textil Maguimel" width={1294} height={360} />
+      <img src="../images/logo-maguimel-small.webp" alt="Textil Maguimel" width={1294} height={360} />
     </a>
   );
 }
@@ -199,6 +199,7 @@ function ContactAndFooter() {
 }
 
 export default function InternalPage({ category }: { category: CategoryKey }) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const page = content[category];
   const media = catalog[category];
   const [selected, setSelected] = useState<GalleryItem | null>(null);
@@ -241,23 +242,34 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
       (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")),
       { threshold: 0.12 },
     );
+    document.documentElement.classList.add("motion-ready");
     document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     if (!selected) return;
-    const close = (event: KeyboardEvent) => event.key === "Escape" && setSelected(null);
+    const previousFocus = document.activeElement as HTMLElement | null;
+    dialogRef.current?.showModal();
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelected(null);
+      if (event.key === "Tab") {
+        event.preventDefault();
+        dialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+      }
+    };
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", close);
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", close);
+      previousFocus?.focus();
     };
   }, [selected]);
 
   const moveHero = (event: React.PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
@@ -376,14 +388,12 @@ export default function InternalPage({ category }: { category: CategoryKey }) {
       </a>
 
       {selected && (
-        <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={selected.title}>
+        <dialog ref={dialogRef} className="gallery-modal" aria-label={selected.title} onCancel={() => setSelected(null)}>
           <button className="gallery-modal-close" onClick={() => setSelected(null)} aria-label="Cerrar imagen">Cerrar &times;</button>
           <figure>
             <img src={asset(selected.src)} alt={selected.title} />
             <figcaption>{selected.title}</figcaption>
-          </figure>
-        </div>
-      )}
+          </figure></dialog>)}
     </main>
   );
 }

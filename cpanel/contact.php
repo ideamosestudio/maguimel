@@ -20,6 +20,13 @@ header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Accept, Content-Type');
 header('Content-Type: application/json; charset=UTF-8');
 header('Cache-Control: no-store');
+header('X-Content-Type-Options: nosniff');
+
+if ((int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 16384) {
+    http_response_code(413);
+    echo json_encode(['ok' => false]);
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
@@ -40,7 +47,19 @@ if ($origin !== '' && !in_array($origin, ALLOWED_ORIGINS, true)) {
 
 function input(string $key, int $maxLength): string
 {
-    $value = trim((string) ($_POST[$key] ?? ''));
+    $raw = $_POST[$key] ?? '';
+    if (!is_string($raw) || !preg_match('//u', $raw)) {
+        http_response_code(422);
+        echo json_encode(['ok' => false]);
+        exit;
+    }
+    $value = trim($raw);
+    $length = function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : strlen($value);
+    if ($length > $maxLength) {
+        http_response_code(422);
+        echo json_encode(['ok' => false]);
+        exit;
+    }
     $value = str_replace(["\r\n", "\r"], "\n", $value);
 
     if (function_exists('mb_substr')) {
@@ -62,7 +81,7 @@ $location = input('location', 120);
 $inquiryType = input('inquiry_type', 120);
 $message = input('message', 4000);
 
-if ($name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!in_array($inquiryType, ['', 'Uniformes escolares', 'Indumentaria publicitaria', 'Indumentaria de trabajo', 'Otra consulta'], true) || preg_match('/[\r\n]/', $email) || $name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(422);
     echo json_encode(['ok' => false, 'message' => 'Revisá los campos obligatorios']);
     exit;
@@ -89,7 +108,6 @@ $headers = [
     'Reply-To: ' . $email,
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
-    'X-Mailer: PHP/' . PHP_VERSION,
 ];
 
 $sent = mail(RECIPIENT, $subject, $body, implode("\r\n", $headers));
